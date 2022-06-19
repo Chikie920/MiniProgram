@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="bar" style="height: {{naviHeight}}px;"></view>
+<!-- 透明状态栏 -->
+
+<view class="header" height="{{screenHeight*0.09}}px">
+<van-image width="50" height="50" src="https://img.yzcdn.cn/vant/cat.jpeg"></van-image>
+</view>
+<!-- 顶部天气相关 -->
+
+<view class="search"></view>
+
+<view class="select_label"></view>
+
+<view class="hot_places"></view>
+
+<view class="footer"></view>
