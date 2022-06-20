@@ -2,4 +2,27 @@
 .header {
   width: 1.0;
   background-color: green;
+  overflow:hidden;
+  display:block;
+}
+
+.search {
+  width: 1.0;
+  background-color: cadetblue;
+  overflow: hidden;
+  display: block;
+}
+
+.select_label {
+  width: 1.0;
+  background-color: chocolate;
+  overflow: hidden;
+  display: block;
+}
+
+.hot_places {
+  width: 1.0;
+  background-color: darkcyan;
+  overflow: hidden;
+  display: block;
 }
