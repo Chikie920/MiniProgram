@@ -3,19 +3,58 @@
 <view class="bar" style="height: {{naviHeight}}px;"></view>
 <!-- 透明状态栏 -->
 
-<view class="header" style="height:{{screenHeight*0.1}}px">
-<van-image height="60px" width="60px" src="https://img.yzcdn.cn/vant/cat.jpeg"></van-image>
+<view class="header" style="height: {{screenHeight*0.1}}px;">
+  <van-image class="weather" height = "{{screenHeight*0.1*0.6}}px" width = "{{screenHeight*0.1*0.6}}px" src="/sources/dayu.png"></van-image>
+  <text class="tips">今日有大雨，记得带伞哦</text>
 </view>
 <!-- 顶部天气相关 -->
 
-<view class="search" style="height: {{screenHeight*0.1}}px;"></view>
+<view class="search" style="height: {{screenHeight*0.1}}px;">
+  <!-- <view class="searcher" style="width: {{screenWidth*0.8}}px; height: inherit;"> -->
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+  <!-- </view> -->
+  <!-- <view class="selecter" style="width: {{screenWidth*0.2}}px; height: inherit;">
+  </view> -->
+</view>
 <!-- 搜索 -->
 
-<view class="select_label" style="height: {{screenHeight*0.15}}px;"></view>
+<view class="select_label" style="height: {{screenHeight*0.2}}px;">
+  <view class="label_img">
+    <image class="label_img_1" src="/sources/jingdian.png"></image>
+  </view>
+  <view class="label_img">
+    <image class="label_img_2" src="/sources/lvyouxianlu.png"></image>
+  </view>
+  <view class="label_img">
+    <image class="label_img_3" src="/sources/quanjingtu.png"></image>
+  </view>
+  <view class="label_img">
+    <image class="label_img_4" src="/sources/ditu.png"></image>
+  </view>
+  <view class="label_text">景点</view>
+  <view class="label_text">路线</view>
+  <view class="label_text">全景</view>
+  <view class="label_text">地图</view>
+</view>
 <!-- 功能模块 -->
 
-<view class="hot_places" style="height: {{screenHeight*0.65}}px;"></view>
+<view class="hot_places" style="min-height: {{screenHeight*0.6}}px;">
+
+</view>
 <!-- 热门景点 -->
 
-<view class="footer"></view>
+<view class="footer" style="height: {{screenHeight*0.12}}px;">
+  <view class="footer-label">
+    <image class="footer_img_1" src="/sources/shouye.png"></image>
+  </view>
+  <view class="footer-label">
+    <image class="footer_img_2" src="/sources/shoucang.png"></image>
+  </view>
+  <view class="footer-label">
+    <image class="footer_img_3" src="/sources/plan2.png"></image>
+  </view>
+  <view class="footer-label">
+    <image class="footer_img_4" src="/sources/setting.png"></image>
+  </view>
+</view>
 <!-- 底部导航栏 -->
