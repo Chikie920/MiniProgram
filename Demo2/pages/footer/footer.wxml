@@ -1,0 +1,18 @@
+<template name="footer">
+  <view class="footer" style="width: {{screenWidth}}px; height: {{screenHeight*0.12}}px;">
+    <view class="footer-container" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.12}}px;">
+      <view class="footer-label">
+        <image class="footer_img_1" src="/sources/shouye.png"></image>
+      </view>
+      <view class="footer-label">
+        <image class="footer_img_2" src="/sources/shoucang.png"></image>
+      </view>
+      <view class="footer-label">
+        <image class="footer_img_3" src="/sources/plan2.png"></image>
+      </view>
+      <view class="footer-label">
+        <image class="footer_img_4" src="/sources/setting.png"></image>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,29 +1,36 @@
 /**index.wxss**/
+@import "/pages/footer/footer.wxss";
+
 .header {
   display: flex;
   align-items: center;
   overflow:hidden;
+  margin: 0 auto;
 }
 
 .search {
-  /* background-color: cadetblue; */
+  display: flex;
+  align-items: center;
+  align-items: center;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .select_label {
-  /* background-color: chocolate; */
   overflow: hidden;
   display: grid;
-  grid-template-columns: 3.2rem 3.2rem 3.2rem 3.2rem;
-  grid-template-rows: 3.2rem 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   column-gap: 1.8rem;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   justify-content: center;
   align-content: center;
 }
 
 .hot_places {
   background-color: darkcyan;
+  position: relative;
+  display: grid;
 }
 
 .weather {
@@ -36,49 +43,51 @@
   font-size: 0.8em;
 }
 
-/* .searcher {
-  float: left;
+/*
+对Vant组件样式修改
+*/
+
+van-search {
+  width: inherit;
 }
 
-.selecter {
-  float: right;
-  background-color: darkgray;
-  overflow: hidden;
-} */
+.van-search__content, .van-search__content--round {
+  height: 3.5rem;
+  vertical-align: middle;
+}
+
+.van-search__field, .field-class {
+  display: flex;
+  align-items: center;
+}
 
 .label_img {
   display: flex;
   align-items: center;
   background-color: coral;
-  border-radius: 27%;
+  border-radius: 30%;
 }
 
 .label_img_1, .label_img_2, .label_img_3, .label_img_4 {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   margin: 0 auto;
 }
 
 .label_text {
-  margin-top: 0.5rem;
-  display: inline;
   text-align: center;
 }
 
-
-
-.footer_img_1, .footer_img_3, .footer_img_4 {
-  width: 1.5rem;
-  height: 1.5rem;
+.card {
+  height: 14rem;
+  background-color: azure;
   margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
 }
 
-.footer_img_2 {
-  width: 1.8rem;
-  height: 1.8rem;
+.card_image {
+  overflow: hidden;
   margin: 0 auto;
-}
-
-.footer_img_4 {
-  opacity: 0.85;
 }

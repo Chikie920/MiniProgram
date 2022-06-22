@@ -1,28 +1,7 @@
 /**app.wxss**/
 page {
   background-color: #ffffff;
-  position: fixed;
-  overflow: scroll;
-}
-
-.footer {
   position: sticky;
-  bottom: 0px;
-  margin-bottom: 0px;
-  background-color: #ffffff;
-  /* background-color: aqua; */
-  display: grid;
-  grid-template-columns: 3.2rem 3.2rem 3.2rem 3.2rem;
-  grid-template-rows: 3.2rem;
-  justify-content: center;
-  align-content: center;
-  column-gap: 1.8rem;
-  border-radius: 20px 20px 0 0;
-}
-
-.footer-label {
-  display: flex;
+  overflow: scroll;
   align-items: center;
-  /* background-color: coral; */
-  border-radius: 27%;
 }

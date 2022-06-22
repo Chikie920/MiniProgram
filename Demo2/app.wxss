@@ -1,0 +1,15 @@
+/**app.wxss**/
+page {
+  background-color: #F9FAFB;
+  display: fixed;
+  position: relative;
+  overflow: scroll;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}

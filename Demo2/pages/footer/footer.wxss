@@ -1,0 +1,44 @@
+/* pages/footer/footer.wxss */
+
+.footer {
+  display: fixed;
+  position: fixed;
+  bottom: 0px;
+  background-color: #ffffff;
+  border-radius: 20px 20px 0 0;
+  align-items: center;
+  box-shadow: -0.5px -0.5px 0.01px #E0E0E0,
+              0.5px -0.5px 0.01px #E0E0E0;
+}
+
+.footer-container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3.2rem;
+  justify-content: center;
+  align-content: center;
+  column-gap: 1.8rem;
+}
+
+.footer-label {
+  display: flex;
+  align-items: center;
+  border-radius: 27%;
+}
+
+.footer_img_1, .footer_img_3, .footer_img_4 {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 auto;
+}
+
+.footer_img_2 {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0 auto;
+}
+
+.footer_img_4 {
+  opacity: 0.85;
+}

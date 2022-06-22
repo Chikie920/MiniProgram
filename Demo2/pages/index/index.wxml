@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<import src="/pages/footer/footer.wxml"/>
+
+<view style="height: {{naviHeight}}px;"></view>
+<!-- 透明状态栏 -->
+
+<view class="header" style="width: {{screenWidth*0.9}}px; min-height: {{screenHeight*0.25}}px;">
+  <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; min-height: {{screenHeight*0.25*0.5}}px;">
+    <view class="weather-container">
+      <image class="weather" src="/sources/qingtian.png"></image>
+      <view class="lang-container">
+        <image class="lang-img" src="/sources/yuyan1.png"></image>
+        <text class="lang-text">Lang, ZH</text>
+        <image class="lang-img-right" src="/sources/down2.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="header-text" style="width: {{screenWidth*0.9}}px; min-height: {{screenHeight*0.25*0.5}}px;">
+    <view><text class="text-greet">Hey there! 你好！ 👋🍃</text></view>
+    <view><text class="text-tips">今天会下雨，记得带伞哦!</text></view>
+  </view>
+</view>
+<!-- 顶部显示 -->
+
+<view class="select-labels" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.15}}px;">
+  <scroll-view class="labels-container" scroll-x style="width: inherit;">
+    <view class="label">
+
+      <view class="label-img-continer">
+        <image class="label-img" src="/sources/jingdian3.png"></image>
+      </view>
+      <text class="label-text">景点</text>
+    </view>
+
+
+    <view class="label label-style"><view class="label-img-continer">
+        <image class="label-img" src="/sources/luxian.png"></image>
+      </view>
+      <text class="label-text">路线</text>
+    </view>
+
+
+    <view class="label label-style"><view class="label-img-continer">
+        <image class="label-img" src="/sources/quanjing2.png"></image>
+      </view>
+      <text class="label-text">全景</text>
+    </view>
+
+    <view class="label label-style"><view class="label-img-continer">
+        <image class="label-img" src="/sources/ditu2.png"></image>
+      </view>
+      <text class="label-text">地图</text>
+    </view>
+
+  </scroll-view>
+</view>
+<!-- 功能选项 -->
+
+<view class="hot-places" style="width: {{screenWidth*0.9}}px; min-height: {{screenHeight*0.35}}px;"></view>
+<!-- 热门景点 -->
+
+<view class="explore"></view>
+<!-- 待定 -->
+
+<template is="footer" data="{{screenWidth, screenHeight}}"></template>
+<!-- 底部导航栏 -->
