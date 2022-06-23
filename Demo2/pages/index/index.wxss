@@ -114,15 +114,61 @@
   font-size: 0.8rem;
   margin-left: 0.8rem;
 }
-
 /* 功能样式 */
 
 
-
-
+.popular-text {
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
 
 .hot-places {
   background-color: pink;
   margin: 0 auto;
+  overflow: hidden;
+  margin-top: 1rem;
 }
+
+.places-container {
+  background-color: blanchedalmond;
+  height: inherit;
+  white-space: nowrap;
+}
+
+.palces-card-container {
+  width: 12rem;
+  height: inherit;
+  display: inline-block;
+  border-radius: 1rem;
+  background-color: lightcyan;
+  position: relative;
+}
+
+.places-card {
+  /* background-color: lightcoral; */
+  width: 11rem;
+  height: inherit;
+  /* display: grid;
+  column-count: 1;
+  grid-template-rows: 2.5fr 1fr; */
+  margin: 0 auto;
+}
+
+.places-card-style {
+    margin-left: 1rem;
+}
+
+.places-img {
+  width: inherit;
+  height: 9rem;
+  background-color: pink;
+  border-radius: 1rem;
+}
+
+.places-info {
+  background-color: bisque;
+  width: inherit;
+  height: 3rem;
+}
+
 /* 热门景点样式 */
