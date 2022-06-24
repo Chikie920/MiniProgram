@@ -1,6 +1,6 @@
 /**app.wxss**/
 page {
-  background-color: #fafbfc;
+  background-color: #FDFDFE;
   display: fixed;
   position: relative;
   overflow: scroll;

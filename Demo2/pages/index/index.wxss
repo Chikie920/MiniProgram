@@ -21,10 +21,11 @@
 
 .weather {
   float: left;
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.5;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
+  /* opacity: 0.5; */
+  /* background-color: brown; */
 }
 
 .lang-container {
@@ -53,6 +54,7 @@
 .header-text {
   /* background-color: lightpink; */
   line-height: 1.8rem;
+  margin-top: 1.5rem;
 }
 
 .text-greet {
@@ -75,19 +77,23 @@
 
 .labels-container {
   position: relative;
+  height: 4rem;
   /* background-color: pink; */
   white-space: nowrap;
 }
 
 .label {
+  margin-top: 0.5rem;
   display: inline-flex;
   width: 6.5rem;
   height: 3rem;
   background-color: #ffffff;
   border-radius:0.9rem;
   align-items: center;
-  box-shadow: 0.02px 0.02px 0.01px #c8c3c3,
-              -0.02px -0.02px 0.01px #c8c3c3;
+  /* box-shadow: 0.02px 0.02px 0.01px #c8c3c3,
+              -0.02px -0.02px 0.01px #c8c3c3; */
+  box-shadow: 1px 1px 1px #f4f5f6,
+              -1px -1px 1px #f4f5f6;
 }
 
 .label-style {
@@ -229,12 +235,16 @@
 .explore-img-container {
   overflow: hidden;
   margin: 0 auto;
+  display: flex;
+  align-items: 0 auto;
 }
 
 .explore-img {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 100%;
+  box-shadow: 1.5px 1.5px 2px #f4f5f6,
+              -1.5px -1.5px 2px #f4f5f6;
 }
 
 /* 探索 */

@@ -10,11 +10,11 @@
   <view class="header" style="width: {{screenWidth*0.9}}px;">
     <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
       <view class="weather-container">
-        <image class="weather" src="/sources/qingtian.png"></image>
+        <image class="weather" src="/sources/clear-day.svg"></image>
         <view class="lang-container">
           <image class="lang-img" src="/sources/yuyan1.png"></image>
           <text class="lang-text">Lang, ZH</text>
-          <image class="lang-img-right" src="/sources/down2.png"></image>
+          <image class="lang-img-right" src="/sources/qiehuan.png"></image>
         </view>
       </view>
     </view>
@@ -29,7 +29,6 @@
   <view class="select-labels" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.12}}px;">
     <scroll-view class="labels-container" scroll-x style="width: inherit;">
       <view class="label">
-
         <view class="label-img-continer">
           <image class="label-img" src="/sources/jingdian3.png"></image>
         </view>

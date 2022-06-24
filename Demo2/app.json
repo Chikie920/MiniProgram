@@ -9,7 +9,6 @@
     "navigationStyle": "custom"
   },
   "usingComponents": {
-    "van-image": "@vant/weapp/image/index"
   },
   "sitemapLocation": "sitemap.json"
 }
