@@ -4,84 +4,140 @@
 <view style="height: {{naviHeight}}px;"></view>
 <!-- 透明状态栏 -->
 
-<view class="header" style="width: {{screenWidth*0.9}}px;">
-  <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
-    <view class="weather-container">
-      <image class="weather" src="/sources/qingtian.png"></image>
-      <view class="lang-container">
-        <image class="lang-img" src="/sources/yuyan1.png"></image>
-        <text class="lang-text">Lang, ZH</text>
-        <image class="lang-img-right" src="/sources/down2.png"></image>
+<view style="min-height: {{screenHeight*0.9}}px;">
+<!-- 页面内容容器 -->
+
+  <view class="header" style="width: {{screenWidth*0.9}}px;">
+    <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
+      <view class="weather-container">
+        <image class="weather" src="/sources/qingtian.png"></image>
+        <view class="lang-container">
+          <image class="lang-img" src="/sources/yuyan1.png"></image>
+          <text class="lang-text">Lang, ZH</text>
+          <image class="lang-img-right" src="/sources/down2.png"></image>
+        </view>
       </view>
+    </view>
+
+    <view class="header-text" style="width: {{screenWidth*0.9}}px;">
+      <view><text class="text-greet">Hey there! 你好！ 👋🍃</text></view>
+      <view><text class="text-tips">今天会下雨，记得带伞哦!</text></view>
     </view>
   </view>
+  <!-- 顶部显示 -->
 
-  <view class="header-text" style="width: {{screenWidth*0.9}}px;">
-    <view><text class="text-greet">Hey there! 你好！ 👋🍃</text></view>
-    <view><text class="text-tips">今天会下雨，记得带伞哦!</text></view>
+  <view class="select-labels" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.12}}px;">
+    <scroll-view class="labels-container" scroll-x style="width: inherit;">
+      <view class="label">
+
+        <view class="label-img-continer">
+          <image class="label-img" src="/sources/jingdian3.png"></image>
+        </view>
+        <text class="label-text">景点</text>
+      </view>
+
+
+      <view class="label label-style"><view class="label-img-continer">
+          <image class="label-img" src="/sources/luxian.png"></image>
+        </view>
+        <text class="label-text">路线</text>
+      </view>
+
+
+      <view class="label label-style"><view class="label-img-continer">
+          <image class="label-img" src="/sources/quanjing2.png"></image>
+        </view>
+        <text class="label-text">全景</text>
+      </view>
+
+      <view class="label label-style"><view class="label-img-continer">
+          <image class="label-img" src="/sources/ditu2.png"></image>
+        </view>
+        <text class="label-text">地图</text>
+      </view>
+
+    </scroll-view>
   </view>
-</view>
-<!-- 顶部显示 -->
+  <!-- 功能选项 -->
 
-<view class="select-labels" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.12}}px;">
-  <scroll-view class="labels-container" scroll-x style="width: inherit;">
-    <view class="label">
+  <view class="popular-text" style="width: {{screenWidth*0.9}}px;">Popular places</view>
+  <view class="hot-places" style="width: {{screenWidth*0.9}}px; height: 14rem;">
+    <scroll-view class="places-container" scroll-x>
 
-      <view class="label-img-continer">
-        <image class="label-img" src="/sources/jingdian3.png"></image>
+      <view class="places-card-container">
+        <view class="places-card">
+          <view class="places-img"><image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+          <view class="places-info">
+            <text class="place-name">武汉花博会</text>
+            <text class="place-loc">蔡甸区-东风大道</text>
+          </view>
+        </view>
       </view>
-      <text class="label-text">景点</text>
+
+
+      <view class="places-card-container places-card-style">
+        <view class="places-card">
+          <view class="places-img"><image src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+          <view class="places-info">
+            <text class="place-name">武汉花博会</text>
+            <text class="place-loc">蔡甸区-东风大道</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="places-card-container places-card-style">
+        <view class="places-card">
+          <view class="places-img"><image src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+          <view class="places-info">
+            <text class="place-name">武汉花博会</text>
+            <text class="place-loc">蔡甸区-东风大道</text>
+          </view>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <!-- 热门景点 -->
+
+  <view class="explore" style="width: {{screenWidth*0.9}}px;">
+    <view class="explore-text" style="width: {{screenWidth*0.9}}px;">Explore</view>
+    <scroll-view class="explore-scroll" scroll-x>
+
+    <view class="explore-container">
+      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
+      <view class="explore-text">Cat</view>
     </view>
 
-
-    <view class="label label-style"><view class="label-img-continer">
-        <image class="label-img" src="/sources/luxian.png"></image>
-      </view>
-      <text class="label-text">路线</text>
+    <view class="explore-container explore-container-style">
+      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
+      <view class="explore-text">Cat</view>
     </view>
 
-
-    <view class="label label-style"><view class="label-img-continer">
-        <image class="label-img" src="/sources/quanjing2.png"></image>
-      </view>
-      <text class="label-text">全景</text>
+    <view class="explore-container explore-container-style">
+      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
+      <view class="explore-text">Cat</view>
     </view>
 
-    <view class="label label-style"><view class="label-img-continer">
-        <image class="label-img" src="/sources/ditu2.png"></image>
-      </view>
-      <text class="label-text">地图</text>
+    <view class="explore-container explore-container-style">
+      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
+      <view class="explore-text">Cat</view>
     </view>
 
-  </scroll-view>
-</view>
-<!-- 功能选项 -->
-
-<view class="popular-text" style="width: {{screenWidth*0.9}}px;">Popular places</view>
-<view class="hot-places" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.26}}px;">
-  <scroll-view class="places-container" scroll-x>
-
-    <view class="palces-card-container">
-      <view class="places-card">
-        <view class="places-img"></view>
-        <view class="places-info"></view>
-      </view>
+    <view class="explore-container explore-container-style">
+      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
+      <view class="explore-text">Cat</view>
     </view>
 
-
-    <view class="palces-card-container places-card-style">
-      <view class="places-card">
-        <view class="places-img"></view>
-        <view class="places-info"></view>
-      </view>
+    <view class="explore-container explore-container-style">
+      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
+      <view class="explore-text">Cat</view>
     </view>
 
-  </scroll-view>
-</view>
-<!-- 热门景点 -->
-
-<view class="explore"></view>
+    </scroll-view>
+  </view>
 <!-- 待定 -->
+
+</view>
 
 <template is="footer" data="{{screenWidth, screenHeight}}"></template>
 <!-- 底部导航栏 -->
