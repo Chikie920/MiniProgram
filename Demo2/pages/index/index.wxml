@@ -11,9 +11,9 @@
     <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
       <view class="weather-container">
         <image class="weather" src="/sources/clear-day.svg"></image>
-        <view class="lang-container">
+        <view class="lang-container" bindtap="change_lang">
           <image class="lang-img" src="/sources/yuyan1.png"></image>
-          <text class="lang-text">Lang, ZH</text>
+          <text class="lang-text">{{lang[lang_change]}}</text>
           <image class="lang-img-right" src="/sources/qiehuan.png"></image>
         </view>
       </view>

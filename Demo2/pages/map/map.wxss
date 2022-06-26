@@ -1,0 +1,23 @@
+/* pages/map/map.wxss */
+
+.back-icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  /* background-color: #ffffff; */
+  position: absolute;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.back-icon {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 0 auto;
+}
+
+.map-style {
+  width: inherit;
+  height: inherit;
+}

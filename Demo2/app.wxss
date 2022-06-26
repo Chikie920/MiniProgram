@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "/style/iconfont/iconfont.wxss";
+
 page {
   background-color: #FDFDFE;
   display: fixed;

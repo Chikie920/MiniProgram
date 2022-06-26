@@ -32,6 +32,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .lang-img {
@@ -151,8 +152,8 @@
   background-color: #ffffff;
   position: relative;
   align-items: center;
-  box-shadow: 1.5px 1.5px 2px #f4f5f6,
-              -1.5px -1.5px 2px #f4f5f6;
+  box-shadow: 2px 2px 3px #f4f5f6,
+              -2px -2px 3px #f4f5f6;
 }
 
 .places-card {

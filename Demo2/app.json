@@ -1,14 +1,26 @@
 {
   "pages": [
+    "pages/map/map",
+    "pages/place/place",
     "pages/index/index",
-    "pages/footer/footer"
+    "pages/footer/footer",
+    "pages/route/route",
+    "pages/ar/ar"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请求当前地址用于定位"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-divider": "@vant/weapp/divider/index"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,86 @@
+<!--place.wxml-->
+
+<view style="height: {{naviHeight}}px;"></view>
+<!-- 透明状态栏 -->
+
+<view class="header-container" style="width: {{screenWidth*0.95}}px;">
+  <view class="back-container"><van-icon class="back-icon" name="arrow-left" /></view>
+  <view class="head-text">景点</view>
+</view>
+<!-- 顶部容器 -->
+
+<view class="searcher-container" style="width: {{screenWidth*0.95}}px;">
+  <van-search value="{{ value }}" placeholder="请输入关键词" shape="round" background="inherit"/>
+</view>
+<!-- 搜索框容器 -->
+
+
+<view class="places-list" style="width: {{screenWidth*0.9}}px; min-height: 10rem;">
+  <scroll-view class="places-scroll" scroll-y>
+
+      <view class="card" style="height: {{screenHeight*0.2}}px;">
+        <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image>
+        </view>
+        <view class="card-info" style="min-width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <view class="place-name">到达世界最高城-理塘</view>
+          <view class="place-loc">xxx-xxx</view>
+          <view class="other-info">xxx</view>
+        </view>
+      </view>
+      <van-divider class="card-gap" customStyle="color: black;"></van-divider>
+
+      <view class="card" style="height: {{screenHeight*0.2}}px;">
+        <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image>
+        </view>
+        <view class="card-info" style="min-width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <view class="place-name">到达世界最高城-理塘</view>
+          <view class="place-loc">xxx-xxx</view>
+          <view class="other-info">xxx</view>
+        </view>
+      </view>
+      <van-divider class="card-gap" customStyle="color: black;"></van-divider>
+
+      <view class="card" style="height: {{screenHeight*0.2}}px;">
+        <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image>
+        </view>
+        <view class="card-info" style="min-width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <view class="place-name">到达世界最高城-理塘</view>
+          <view class="place-loc">xxx-xxx</view>
+          <view class="other-info">xxx</view>
+        </view>
+      </view>
+      <van-divider class="card-gap" customStyle="color: black;"></van-divider>
+
+      <view class="card" style="height: {{screenHeight*0.2}}px;">
+        <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image>
+        </view>
+        <view class="card-info" style="min-width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <view class="place-name">到达世界最高城-理塘</view>
+          <view class="place-loc">哎呦，这不丁真吗</view>
+          <view class="other-info">还是看看远处的雪山吧，佳人们</view>
+        </view>
+      </view>
+      <van-divider class="card-gap" customStyle="color: black;"></van-divider>
+
+      <view class="card" style="height: {{screenHeight*0.2}}px;">
+        <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image>
+        </view>
+        <view class="card-info" style="min-width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+          <view class="place-name">到达世界最高城-理塘</view>
+          <view class="place-loc">哎呦，这不丁真吗</view>
+          <view class="other-info">还是看看远处的雪山吧，佳人们</view>
+        </view>
+      </view>
+      <van-divider class="card-gap" customStyle="color: black;"></van-divider>
+
+      
+
+
+  </scroll-view>
+</view>
+<!-- 景点列表 -->

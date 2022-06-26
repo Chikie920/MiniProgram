@@ -1,0 +1,115 @@
+/* pages/places/place.wxss */
+
+.header-container {
+  height: 3rem;
+  /* background-color: pink; */
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.back-container {
+  width: 3rem;
+  height: inherit;
+  /* background-color: plum; */
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.head-text {
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+/* 顶部样式 */
+
+
+.searcher-container {
+  height: 4rem;
+  /* background-color: cadetblue; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/*
+对Vant组件样式进行修改
+*/
+
+van-search {
+  width: inherit;
+}
+
+.van-search__content, .van-search__content--round {
+  height: 2.5rem;
+  vertical-align: middle;
+}
+
+.van-search__field, .field-class {
+  display: flex;
+  align-items: center;
+}
+/* 搜索样式 */
+
+
+.places-list {
+  position: relative;
+  top: 1.5rem;
+  margin: 0 auto;
+  /* background-color: khaki; */
+}
+
+.places-scroll {
+  width: inherit;
+  /* background-color: pink; */
+  white-space: nowrap;
+}
+
+.card {
+  width: inherit;
+  /* background-color: khaki; */
+  display: flex;
+  align-items: center;
+}
+
+.card-img {
+  /* width: 10rem;
+  height: 10rem; */
+  /* background-color: lightgrey; */
+  border-radius: 14%;
+  display: inline;
+  overflow: hidden;
+}
+
+.card-info {
+  /* background-color: lightblue; */
+  overflow: hidden;
+  position: relative;
+  left: 1rem;
+}
+
+.place-name, .place-loc, .other-info {
+  width: inherit;
+}
+
+.place-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.place-loc {
+  font-size: 0.9rem;
+}
+
+.card-gap {
+  color: black;
+}
