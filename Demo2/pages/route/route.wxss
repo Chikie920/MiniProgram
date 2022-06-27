@@ -1,1 +1,12 @@
 /* pages/route/route.wxss */
+@import "/pages/map/map.wxss";
+
+.drawer {
+  width: 100%;
+  height: 30%;
+  z-index: 1;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+}

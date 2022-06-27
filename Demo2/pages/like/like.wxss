@@ -1,0 +1,72 @@
+/* pages/like/like.wxss */
+@import "/pages/footer/footer.wxss";
+
+.header {
+  margin: 0 auto;
+  /* background-color: lightcoral; */
+  position: relative;
+}
+
+.header-text {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+  bottom: 2rem;
+}
+
+.like-container {
+  width: 100%;
+  /* background-color: pink; */
+}
+
+.like-list-container {
+  /* background-color: khaki; */
+  margin: 0 auto;
+}
+
+.place-card {
+  /* background-color: lightblue; */
+  margin: 0 auto;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.card-img {
+  width: inherit;
+  height: inherit;
+  /* background-color: white; */
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px #f4f5f6,
+  -1px -1px 1px #f4f5f6;
+}
+
+.place-img {
+  width: inherit;
+}
+
+.place-info {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0px;
+  /* background-color: brown; */
+}
+
+.place-name, .place-loc {
+  margin-left: 1rem;
+  color: white;
+}
+
+.place-name {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.place-loc {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 1.2rem;
+}

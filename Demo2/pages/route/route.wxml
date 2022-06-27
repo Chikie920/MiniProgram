@@ -1,0 +1,7 @@
+<import src="/pages/map/map.wxml"/>
+
+<template is="map" data="{{naviHeight, screenWidth, screenHeight, longitude, latitude}}"></template>
+<!-- 引入模板 -->
+
+<view class="drawer">
+</view>

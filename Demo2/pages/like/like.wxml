@@ -1,0 +1,54 @@
+<!--like.wxml-->
+<import src="/pages/footer/footer.wxml"/>
+
+<view style="width: {{screenWidth*0.9}}px; height: {{naviHeight}}px;"></view>
+
+<view class="header" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.15}}px;">
+  <view class="header-text">Like</view>
+</view>
+
+<view class="like-container" style="min-height: {{screenHeight*0.85}}px;">
+  <scroll-view class="like-list-container" scroll-y style="width: {{screenWidth*0.95}}px;">
+
+    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
+      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+      <view class="place-info">
+        <view class="place-name">New York</view>
+        <view class="place-loc">xxxxxx</view>
+      </view>
+    </view>
+
+    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
+      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+      <view class="place-info">
+        <view class="place-name">New York</view>
+        <view class="place-loc">xxxxxx</view>
+      </view>
+    </view>
+
+    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
+      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+      <view class="place-info">
+        <view class="place-name">New York</view>
+        <view class="place-loc">xxxxxx</view>
+      </view>
+    </view>
+
+    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
+      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+      <view class="place-info">
+        <view class="place-name">New York</view>
+        <view class="place-loc">xxxxxx</view>
+      </view>
+    </view>
+
+    
+
+  </scroll-view>
+</view>
+
+
+
+
+<template is="footer" data="{{screenWidth, screenHeight}}"></template>
+<!-- 底部导航栏 -->

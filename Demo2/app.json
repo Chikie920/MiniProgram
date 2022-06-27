@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/like/like",
+    "pages/route/route",
+    "pages/index/index",
     "pages/map/map",
     "pages/place/place",
-    "pages/index/index",
     "pages/footer/footer",
-    "pages/route/route",
     "pages/ar/ar"
   ],
   "permission": {

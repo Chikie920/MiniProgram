@@ -1,4 +1,4 @@
-// pages/route/route.js
+// pages/like/like.js
 const app = getApp();
 
 Page({
@@ -8,26 +8,15 @@ Page({
    */
   data: {
     naviHeight: app.globalData.naviHeight,
-    screenWidth: app.globalData.screenWidth,
-    screenHeight: app.globalData.screenHeight,
-    longitude: 0,
-    latitude: 0
+    screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
+    screenWidth: app.globalData.screenWidth
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    wx.getLocation({
-      type: 'wgs84',
-      altitude: true,
-      success:(res)=>{
-        this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude
-        })
-      }
-    }); /*获取定位*/
+
   },
 
   /**
