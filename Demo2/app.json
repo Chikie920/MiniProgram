@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/like/like",
+    "pages/detail/detail",
+    "pages/plan/plan",
+    "pages/setting/setting",
     "pages/route/route",
+    "pages/like/like",
     "pages/index/index",
     "pages/map/map",
     "pages/place/place",

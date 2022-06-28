@@ -1,7 +1,14 @@
 <import src="/pages/map/map.wxml"/>
+<wxs module="mapList" src="/pages/route/wxs/mapList.wxs"></wxs>
 
-<template is="map" data="{{naviHeight, screenWidth, screenHeight, longitude, latitude}}"></template>
-<!-- 引入模板 -->
-
-<view class="drawer">
+<view class="wrap">
+  <view class="map-wrap" style="height: {{ screenHeight - 400 }}px">
+    <template is="map" data="{{naviHeight, screenWidth, screenHeight, longitude, latitude}}"></template>
+    <!-- 引入模板 -->
+  </view>
+  <view class="drawer">
+    <view class="drawer-header" data-height="{{screenHeight}}" data-isx="{{isX}}" catchtouchstart="{{mapList.start}}" catchtouchmove="{{mapList.move}}" catchtouchend="{{mapList.end}}">
+      <view class="tag"></view>
+    </view>
+  </view>
 </view>
