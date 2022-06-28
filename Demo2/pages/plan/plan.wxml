@@ -1,1 +1,10 @@
 <!--plan.wxml-->
+<import src="/pages/footer/footer.wxml"/>
+
+<view style="height: {{naviHeight}}px;"></view>
+<!-- 透明状态栏 -->
+
+<!-- <view style="height: 500px;width: {{screenWidth}}px; background-color: pink;"></view> -->
+
+<template is="footer" data="{{screenWidth, screenHeight}}"></template>
+<!-- 底部导航栏 -->

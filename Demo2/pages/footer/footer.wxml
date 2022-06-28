@@ -1,22 +1,18 @@
 <template name="footer">
   <view class="footer" style="width: {{screenWidth}}px; height: {{screenHeight*0.1}}px;">
     <view class="footer-container" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.1}}px;">
-      <view class="footer-label">
-        <!-- <image class="footer_img_1" src="/sources/shouye.png"></image> -->
+      <navigator class="footer-label" url="/pages/index/index">
         <text class="iconfont icon-shouye footer_img_1" style="font-size: 1.5rem;font-weight: 600; color: red;"></text>
-      </view>
-      <view class="footer-label">
-        <!-- <image class="footer_img_2" src="/sources/shoucang.png"></image> -->
+      </navigator>
+      <navigator class="footer-label" url="/pages/like/like">
         <text class="iconfont icon-shoucang footer_img_1" style="font-size: 1.2rem;font-weight: 600; color: red;"></text>
-      </view>
-      <view class="footer-label">
-        <!-- <image class="footer_img_3" src="/sources/plan2.png"></image> -->
+      </navigator>
+      <navigator class="footer-label" url="/pages/plan/plan">
         <text class="iconfont icon-jihua1 footer_img_1" style="font-size: 1.5rem;font-weight: 600; color: red;"></text>
-      </view>
-      <view class="footer-label">
-        <!-- <image class="footer_img_4" src="/sources/setting.png"></image> -->
+      </navigator>
+      <navigator class="footer-label" url="/pages/setting/setting">
         <text class="iconfont icon-shezhi footer_img_1" style="font-size: 1.5rem;font-weight: 600; color: red;"></text>
-      </view>
+      </navigator>
     </view>
   </view>
 </template>

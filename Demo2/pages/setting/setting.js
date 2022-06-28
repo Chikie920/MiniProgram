@@ -1,11 +1,16 @@
 // pages/setting/setting.js
+const app = getApp();
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    naviHeight: app.globalData.naviHeight,
+    screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
+    screenWidth: app.globalData.screenWidth
   },
 
   /**

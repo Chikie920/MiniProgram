@@ -1,1 +1,2 @@
 /* pages/setting/setting.wxss */
+@import "/pages/footer/footer.wxss";

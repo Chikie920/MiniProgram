@@ -1,7 +1,7 @@
 <!--map.wxml-->
 
 <template name="map">
-  <view class="back-icon-container" style="margin-top: {{naviHeight}}px; z-index: 1;"><van-icon class="back-icon" name="arrow-left" /></view>
+  <navigator class="back-icon-container" style="margin-top: {{naviHeight}}px; z-index: 1;" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
 
   <view class="map-container" style="width: {{screenWidth}}px; height: {{screenHeight}}px; background-color: pink;">
     <map class="map-style" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" show-location></map>

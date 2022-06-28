@@ -3,7 +3,6 @@
 
 page {
   background-color: #FDFDFE;
-  display: fixed;
   position: relative;
   overflow: scroll;
   align-items: center;

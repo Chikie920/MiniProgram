@@ -1,1 +1,2 @@
 /* pages/plan/plan.wxss */
+@import "/pages/footer/footer.wxss";

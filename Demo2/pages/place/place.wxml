@@ -4,7 +4,7 @@
 <!-- 透明状态栏 -->
 
 <view class="header-container" style="width: {{screenWidth*0.95}}px;">
-  <view class="back-container"><van-icon class="back-icon" name="arrow-left" /></view>
+  <navigator class="back-container" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
   <view class="head-text">景点</view>
 </view>
 <!-- 顶部容器 -->

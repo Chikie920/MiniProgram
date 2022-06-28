@@ -28,32 +28,36 @@
 
   <view class="select-labels" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.12}}px;">
     <scroll-view class="labels-container" scroll-x style="width: inherit;">
-      <view class="label">
+      
+        <navigator class="label" url="/pages/place/place">
+          <view class="label-img-continer">
+            <image class="label-img" src="/sources/jingdian3.png"></image>
+          </view>
+          <text class="label-text">景点</text>
+        </navigator>
+
+
+      <navigator class="label label-style" url="/pages/route/route">
         <view class="label-img-continer">
-          <image class="label-img" src="/sources/jingdian3.png"></image>
-        </view>
-        <text class="label-text">景点</text>
-      </view>
-
-
-      <view class="label label-style"><view class="label-img-continer">
           <image class="label-img" src="/sources/luxian.png"></image>
         </view>
         <text class="label-text">路线</text>
-      </view>
+      </navigator>
 
 
-      <view class="label label-style"><view class="label-img-continer">
+      <navigator class="label label-style" url="/pages/ar/ar">
+        <view class="label-img-continer">
           <image class="label-img" src="/sources/quanjing2.png"></image>
         </view>
         <text class="label-text">全景</text>
-      </view>
+      </navigator>
 
-      <view class="label label-style"><view class="label-img-continer">
+      <navigator class="label label-style" url="/pages/map/map">
+        <view class="label-img-continer">
           <image class="label-img" src="/sources/ditu2.png"></image>
         </view>
         <text class="label-text">地图</text>
-      </view>
+      </navigator>
 
     </scroll-view>
   </view>
