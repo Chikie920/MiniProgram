@@ -1,1 +1,36 @@
 <!--detail.wxml-->
+
+<view style="height: {{naviHeight}}px;"></view>
+<!-- 透明状态栏 -->
+
+<view class="header" style="width: {{screenWidth*0.95}}px;">
+  <navigator class="back-container" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
+  <view class="header-title">景点详情</view>
+</view>
+<!-- 顶部容器 -->
+
+<view class="main-img" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.27}}px;"></view>
+<!-- 头图 -->
+
+<view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">
+  <view class="place-name">理塘</view>
+  <view class="place-loc">xxxxxxxxx</view>
+</view>
+<!-- 景点名字、位置与收藏 -->
+
+<view class="desc" style="width: {{screenWidth*0.95}}px;">
+</view>
+<!-- 介绍与资讯 -->
+
+<view class="pictures" style="width: {{screenWidth*0.95}}px;">
+  <scroll-view class="pictures-scroll" scroll-x>
+    <view class="pic-card"></view>
+    <view class="pic-card card-style"></view>
+    <view class="pic-card card-style"></view>
+    <view class="pic-card card-style"></view>
+    <view class="pic-card card-style"></view>
+    <view class="pic-card card-style"></view>
+    <view class="pic-card card-style"></view>
+  </scroll-view>
+</view>
+<!-- 景点照片 -->
