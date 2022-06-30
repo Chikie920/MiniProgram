@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/detail/detail",
+    "pages/setting/setting",
     "pages/index/index",
     "pages/plan/plan",
-    "pages/setting/setting",
+    "pages/detail/detail",
     "pages/route/route",
     "pages/like/like",
     "pages/map/map",

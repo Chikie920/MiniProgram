@@ -1,2 +1,63 @@
 /* pages/setting/setting.wxss */
 @import "/pages/footer/footer.wxss";
+
+.container {
+  width: 90vw;
+  height: 90vh;
+  background-color: pink;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  width: inherit;
+  height: 6rem;
+  background-color: khaki;
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
+  margin-top: 10vh;
+}
+
+.header-img {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: lightblue;
+  border-radius: 100%;
+}
+
+.settings {
+  margin-top: 2rem;
+  width: inherit;
+  background-color: lightblue;
+}
+
+.setting-label {
+  width: inherit;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.setting-icon {
+  width: 4rem;
+  height: 4rem;
+  background-color: ivory;
+  display: flex;
+  align-items: center;
+}
+
+.setting-name {
+  display: inline;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.right-icon {
+  display: inline;
+  width: 4rem;
+  height: 4rem;
+  background-color: lavender;
+  position: absolute;
+  right: 0rem;
+}

@@ -1,2 +1,55 @@
 /* pages/plan/plan.wxss */
 @import "/pages/footer/footer.wxss";
+
+.header {
+  margin: 0 auto;
+  /* background-color: lightcoral; */
+  position: relative;
+}
+
+.header-text {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+  bottom: 2rem;
+}
+
+.add-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  bottom: 2rem;
+  right: 0rem;
+}
+
+.plan-scroll {
+  white-space: nowrap;
+  background-color: pink;
+  margin: 0 auto;
+  position: relative;
+}
+
+.plan-card {
+  margin:0 auto;
+  margin-top: 2rem;
+  background-color: bisque;
+  width: 80vw;
+  height: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.text-container {
+  width: inherit;
+}
+
+.plan-name {
+  float: left;
+  margin-left:0.5rem;
+}
+
+.last-days {
+  float: right;
+  margin-right: 0.5rem;
+}

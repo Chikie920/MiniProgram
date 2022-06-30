@@ -4,6 +4,20 @@
 <view style="height: {{naviHeight}}px;"></view>
 <!-- 透明状态栏 -->
 
+<view class="container">
+  <view class="header">
+    <image class="header-img"></image>
+  </view>
+
+  <view class="settings">
+    <view class="setting-label">
+      <view class="setting-icon"></view>
+      <view class="setting-name">cnm</view>
+      <view class="right-icon"></view>
+    </view>
+  </view>
+
+</view>
 
 <template is="footer" data="{{screenWidth, screenHeight}}"></template>
 <!-- 底部导航栏 -->
