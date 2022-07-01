@@ -1,0 +1,9 @@
+/* pages/add_plan/add_plan.wxss */
+
+.add-plan-container {
+  background-color: pink;
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+

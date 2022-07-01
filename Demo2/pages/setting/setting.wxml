@@ -6,15 +6,29 @@
 
 <view class="container">
   <view class="header">
-    <image class="header-img"></image>
+    <image class="header-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image>
   </view>
 
   <view class="settings">
+
     <view class="setting-label">
-      <view class="setting-icon"></view>
-      <view class="setting-name">cnm</view>
-      <view class="right-icon"></view>
+      <view class="setting-icon"><image src="/sources/info.svg" class="left-icon"></image></view>
+      <view class="setting-name">个人信息</view>
+      <view class="right-icon-container"><van-icon name="arrow" class="right-icon"/></view>
     </view>
+
+    <view class="setting-label">
+      <view class="setting-icon"><image src="/sources/faq.svg" class="left-icon"></image></view>
+      <view class="setting-name">问题与解答</view>
+      <view class="right-icon-container"><van-icon name="arrow" class="right-icon"/></view>
+    </view>
+
+    <view class="setting-label">
+      <view class="setting-icon"><image src="/sources/feedback.svg" class="left-icon"></image></view>
+      <view class="setting-name">反馈</view>
+      <view class="right-icon-container"><van-icon name="arrow" class="right-icon"/></view>
+    </view>
+
   </view>
 
 </view>

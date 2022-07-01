@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/setting/setting",
+    "pages/add_plan/add_plan",
     "pages/index/index",
+    "pages/setting/setting",
     "pages/plan/plan",
     "pages/detail/detail",
     "pages/route/route",

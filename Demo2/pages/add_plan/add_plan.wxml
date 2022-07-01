@@ -1,0 +1,10 @@
+<!--pages/add_plan/add_plan.wxml-->
+<view style="height: {{naviHeight}}px;"></view>
+
+<view class="add-plan-container">
+
+
+
+
+  <view class="commit-botton"></view>
+</view>

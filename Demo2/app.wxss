@@ -6,3 +6,7 @@ page {
   position: relative;
   align-items: center;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
