@@ -13,6 +13,6 @@ Page({
     var change = (this.data.lang_change+1)%2;
     this.setData({
       lang_change: change
-    })
+    });
   }
 })

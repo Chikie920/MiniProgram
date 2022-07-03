@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/add_plan/add_plan",
     "pages/index/index",
+    "pages/add_plan/add_plan",
     "pages/setting/setting",
     "pages/plan/plan",
     "pages/detail/detail",
@@ -25,7 +25,11 @@
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
     "van-search": "@vant/weapp/search/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-button": "@vant/weapp/button/index"
   },
   "sitemapLocation": "sitemap.json"
 }

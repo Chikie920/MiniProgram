@@ -2,9 +2,82 @@
 <view style="height: {{naviHeight}}px;"></view>
 
 <view class="add-plan-container">
+  <view style="height: 10vh;width: inherit;"></view>
+
+  <view class="select-date" bindtap="showPopup">选择计划日期
+    <van-icon name="notes-o" />
+    {{select_year}} {{select_month}} {{select_day}}
+  </view>
+
+  <van-popup
+  show="{{ show }}"
+  round
+  position="bottom"
+  custom-style="height: 40%"
+  overlay="true"
+  close-on-click-overlay="true"
+  bind:close="onClose"
+  >
+    <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    bind:input="onInput"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:confirm="select_over"
+    bind:cancel="select_cancel"
+    bind:change="get_date"
+    />
+  </van-popup>
+<!-- 日期选择弹窗 -->
+
+  <view class="input-container">
+    <van-cell-group>
+    <van-field
+      value="{{ value }}"
+      placeholder="计划名称"
+      border="{{ true }}"
+      bind:change="onChange"
+      maxlength="15"
+      clearable="true"
+      class="input"
+    />
+
+    <view class="activities">
+      <van-field
+        value="{{ value }}"
+        placeholder="输入活动"
+        border="{{ true }}"
+        bind:change="onChange"
+        maxlength="15"
+        clearable="true"
+        class="input"
+      />
+
+      <van-field
+        value="{{ value }}"
+        placeholder="输入活动"
+        border="{{ true }}"
+        bind:change="onChange"
+        maxlength="15"
+        clearable="true"
+        class="input"
+      />
+    </view>
+
+    <view class="new-activity">
+      <van-button type="default" icon="plus" round="true" block="true"></van-button>
+    </view>
+
+    <!-- <view style="width: inherit; height: 100vh; background-color: khaki;"></view> -->
+
+    </van-cell-group>
+  </view>
 
 
 
-
-  <view class="commit-botton"></view>
 </view>
+
+<view class="commit-botton">
+    <van-button type="default" round="true" block="true" bind:click="commit" style="width: inherit;">提交</van-button>
+  </view>

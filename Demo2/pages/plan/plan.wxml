@@ -6,7 +6,9 @@
 
 <view class="header" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.15}}px;">
   <view class="header-text">Plan</view>
-  <van-icon name="add-o" class="add-icon"/>
+  <navigator url="/pages/add_plan/add_plan">
+    <van-icon name="add-o" class="add-icon"/>
+  </navigator>
 </view>
 
 <scroll-view class="plan-scroll" scroll-y style="width: {{screenWidth*0.9}}px; min-height: {{screenHeight*0.85}}px;">

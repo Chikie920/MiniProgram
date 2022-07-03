@@ -9,7 +9,57 @@ Page({
   data: {
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
-    screenWidth: app.globalData.screenWidth
+    screenWidth: app.globalData.screenWidth,
+    show: false,
+    currentDate: new Date().getTime(),
+    minDate: new Date().getTime(),
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      }
+      if (type === 'month') {
+        return `${value}月`;
+      }
+      return `${value}日`;
+    },
+    select_year: "",
+    select_month: "",
+    select_day: "",
+  },
+
+  showPopup: function() {
+    this.setData({
+      show: true
+    });
+  },
+
+  onClose: function() {
+    this.setData({
+      show: false
+    });
+  },
+
+  select_over: function() {
+    this.onClose();
+  },
+
+  select_cancel: function() {
+    this.onClose();
+  },
+
+  get_date: function(event) {
+    let date = event.detail.getValues();
+    this.setData({
+      select_year: date[0],
+      select_month: date[1],
+      select_day: date[2]
+    });
+  },
+
+  commit: function() {
+    wx.navigateBack({
+      delta: 1
+    });
   },
 
   /**
