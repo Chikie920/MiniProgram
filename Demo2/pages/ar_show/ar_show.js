@@ -1,15 +1,11 @@
-// pages/ar/ar.js
-const app = getApp();
-
+// pages/ar_show/ar_show.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    naviHeight: app.globalData.naviHeight,
-    screenWidth: app.globalData.screenWidth,
-    screenHeight: app.globalData.screenHeight
+
   },
 
   /**

@@ -5,6 +5,7 @@ page {
   display: flex;
   flex-flow: column nowrap;
   height: 100vh;
+  overflow: hidden;
 }
 
 .back-icon-container {
@@ -59,4 +60,13 @@ page {
   height: 0.35rem;
   background-color: #ccc;
   border-radius: 6rpx;
+  margin-top: 1rem;
+}
+
+.input-container {
+  width: 100vw;
+  min-height: 40vh;
+  background-color: pink;
+  margin-top: 1rem;
+  white-space: nowrap;
 }

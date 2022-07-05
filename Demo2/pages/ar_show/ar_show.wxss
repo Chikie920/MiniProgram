@@ -1,0 +1,21 @@
+/* pages/ar_show/ar_show.wxss */
+
+.display {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+  position: relative;
+}
+
+.aspects {
+  width: 80vw;
+  height: 10vh;
+  background-color: powderblue;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border-radius: 1.8rem;
+  position: fixed;
+  bottom: 2rem;
+}

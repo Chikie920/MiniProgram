@@ -9,6 +9,21 @@
   <view class="drawer">
     <view class="drawer-header" data-height="{{screenHeight}}" data-isx="{{isX}}" catchtouchstart="{{mapList.start}}" catchtouchmove="{{mapList.move}}" catchtouchend="{{mapList.end}}">
       <view class="tag"></view>
+
+      <!-- 检验当前否在武汉，若不在则要求选择武汉市内的起始地点 -->
+      <!-- 可以依次选择多个目的地 -->
+
+      <!-- 起始地点-想去的地方-添加地点 提供多种路线供选择 显示距离 -->
+
+
     </view>
+
+    <scroll-view class="input-container" scroll-y>
+      <view style="background-color:bisque ; width: inherit; height: 800px;">hello</view>
+    </scroll-view>
+
   </view>
+
+
+
 </view>

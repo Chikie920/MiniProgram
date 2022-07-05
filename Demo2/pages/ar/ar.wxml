@@ -1,0 +1,38 @@
+<!--ar.wxml-->
+
+<view style="height: {{naviHeight}}px;"></view>
+
+<view class="header-container" style="width: {{screenWidth*0.95}}px;">
+  <navigator class="back-container" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
+  <view class="head-text">全景景点列表</view>
+</view>
+
+<view class="place-list">
+
+<van-cell-group inset>
+  <van-transition show="{{ true }}" name="slide-right" duration="500">
+    <navigator url="/pages/ar_show/ar_show">
+      <van-cell title="景点1" class="list-style"/>
+    </navigator>
+    
+    <van-cell title="景点2" class="list-style"/>
+    <van-cell title="景点3" class="list-style"/>
+    <van-cell title="景点4" class="list-style"/>
+    <van-cell title="景点5" class="list-style"/>
+    <van-cell title="景点6" class="list-style"/>
+    <van-cell title="景点7" class="list-style"/>
+    <van-cell title="景点8" class="list-style"/>
+    <van-cell title="景点9" class="list-style"/>
+    <van-cell title="景点10" class="list-style"/>
+    <van-cell title="景点11" class="list-style"/>
+    <van-cell title="景点12" class="list-style"/>
+    <van-cell title="景点1" class="list-style"/>
+    <van-cell title="景点2" class="list-style"/>
+    <van-cell title="景点3" class="list-style"/>
+    <van-cell title="景点4" class="list-style"/>
+  </van-transition>
+</van-cell-group>
+
+<view class="footer-placeholder"></view>
+
+</view>
