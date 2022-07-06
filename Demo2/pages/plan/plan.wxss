@@ -23,7 +23,7 @@
 
 .plan-scroll {
   white-space: nowrap;
-  background-color: pink;
+  /* background-color: pink; */
   margin: 0 auto;
   position: relative;
 }
@@ -31,13 +31,15 @@
 .plan-card {
   margin:0 auto;
   margin-top: 2rem;
-  background-color: bisque;
+  /* background-color: bisque; */
   width: 80vw;
   height: 3rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
   position: relative;
+  box-shadow: 1.5px 1.5px 1.5px #f4f5f6,
+              -1.5px -1.5px 1.5px #f4f5f6;
 }
 
 .text-container {
@@ -52,4 +54,9 @@
 .last-days {
   float: right;
   margin-right: 0.5rem;
+}
+
+.placeholder {
+  width: inherit;
+  height: 2rem;
 }

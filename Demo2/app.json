@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/message/message",
+    "pages/feedback/feedback",
+    "pages/qa/qa",
     "pages/index/index",
     "pages/route/route",
     "pages/ar_show/ar_show",
@@ -33,7 +36,8 @@
     "van-button": "@vant/weapp/button/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-transition": "@vant/weapp/transition/index"
+    "van-transition": "@vant/weapp/transition/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   },
   "sitemapLocation": "sitemap.json"
 }

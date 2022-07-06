@@ -1,16 +1,16 @@
 <template name="footer">
   <view class="footer" style="width: {{screenWidth}}px; height: {{screenHeight*0.1}}px;">
     <view class="footer-container" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.1}}px;">
-      <navigator class="footer-label" url="/pages/index/index">
+      <navigator class="footer-label" url="/pages/index/index" open-type="redirect">
         <text class="iconfont icon-shouye footer_img_1" style="font-size: 1.5rem;font-weight: 600;"></text>
       </navigator>
-      <navigator class="footer-label" url="/pages/like/like">
+      <navigator class="footer-label" url="/pages/like/like" open-type="redirect">
         <text class="iconfont icon-shoucang footer_img_1" style="font-size: 1.2rem;font-weight: 600;"></text>
       </navigator>
-      <navigator class="footer-label" url="/pages/plan/plan">
+      <navigator class="footer-label" url="/pages/plan/plan" open-type="redirect">
         <text class="iconfont icon-jihua1 footer_img_1" style="font-size: 1.5rem;font-weight: 600;"></text>
       </navigator>
-      <navigator class="footer-label" url="/pages/setting/setting">
+      <navigator class="footer-label" url="/pages/setting/setting" open-type="redirect">
         <text class="iconfont icon-shezhi footer_img_1" style="font-size: 1.5rem;font-weight: 600;"></text>
       </navigator>
     </view>

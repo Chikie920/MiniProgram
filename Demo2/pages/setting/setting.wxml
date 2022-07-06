@@ -11,11 +11,11 @@
 
   <view class="settings">
 
-    <view class="setting-label">
+    <!-- <view class="setting-label">
       <view class="setting-icon"><image src="/sources/info.svg" class="left-icon"></image></view>
-      <view class="setting-name">个人信息</view>
+      <view class="setting-name">账户</view>
       <view class="right-icon-container"><van-icon name="arrow" class="right-icon"/></view>
-    </view>
+    </view> -->
 
     <view class="setting-label">
       <view class="setting-icon"><image src="/sources/faq.svg" class="left-icon"></image></view>
@@ -26,6 +26,12 @@
     <view class="setting-label">
       <view class="setting-icon"><image src="/sources/feedback.svg" class="left-icon"></image></view>
       <view class="setting-name">反馈</view>
+      <view class="right-icon-container"><van-icon name="arrow" class="right-icon"/></view>
+    </view>
+
+    <view class="setting-label">
+      <view class="setting-icon"><image src="/sources/xiaoxi.svg" class="left-icon"></image></view>
+      <view class="setting-name">信息</view>
       <view class="right-icon-container"><van-icon name="arrow" class="right-icon"/></view>
     </view>
 

@@ -1,42 +1,17 @@
-// pages/route/route.js
-import Dialog from '@vant/weapp/dialog/dialog';
-const app = getApp();
-
+// pages/qa/qa.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    naviHeight: app.globalData.naviHeight,
-    screenWidth: app.globalData.screenWidth,
-    screenHeight: app.globalData.screenHeight,
-    longitude: 0,
-    latitude: 0,
-    dialog_show: ""
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    wx.getLocation({
-      type: 'wgs84',
-      altitude: true,
-      success:(res)=>{
-        this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude
-        })
-      }
-    }); /*获取定位*/
-
-    Dialog.alert({
-      message: '您当前并不在武汉，请输入一个武汉市内地点作为起始地',
-    }).then(() => {
-      this.dialog_show = "";
-      // on close
-    });
 
   },
 

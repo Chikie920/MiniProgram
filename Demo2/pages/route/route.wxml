@@ -6,6 +6,10 @@
     <template is="map" data="{{naviHeight, screenWidth, screenHeight, longitude, latitude}}"></template>
     <!-- 引入模板 -->
   </view>
+
+  <van-dialog id="van-dialog" />
+  <!-- 消息弹窗 -->
+
   <view class="drawer">
     <view class="drawer-header" data-height="{{screenHeight}}" data-isx="{{isX}}" catchtouchstart="{{mapList.start}}" catchtouchmove="{{mapList.move}}" catchtouchend="{{mapList.end}}">
       <view class="tag"></view>
@@ -15,11 +19,50 @@
 
       <!-- 起始地点-想去的地方-添加地点 提供多种路线供选择 显示距离 -->
 
-
     </view>
 
     <scroll-view class="input-container" scroll-y>
-      <view style="background-color:bisque ; width: inherit; height: 800px;">hello</view>
+      <view class="input-style">
+        <van-cell-group>
+          <van-field value="{{ value }}" placeholder="输入起始地" border="{{ true }}" bind:change="onChange" maxlength="15" clearable="true" class="{{dialog_show}}" /> <!-- 根据当前定位确定class -->
+      
+          <view class="place">
+            <van-field value="{{ value }}" placeholder="输入目的地" border="{{ true }}" bind:change="onChange" maxlength="15" clearable="true" />
+          </view>
+      
+          <view class="new-places">
+            <van-button type="default" icon="plus" round="true" block="true"></van-button>
+          </view>
+      
+        </van-cell-group>
+      </view>
+      <!-- 地点输入 -->
+
+      <view class="label-text">交通策略</view>
+      <scroll-view class="select-labels" scroll-x>
+        <view class="labels-container">
+          <view class="label-style">
+            <image class="label-img" src="/sources/zou.svg"></image>
+          </view>
+          <view class="label-style label-margin">
+            <image class="label-img" src="/sources/jiashi.svg"></image>
+          </view>
+          <view class="label-style label-margin">
+            <image class="label-img" src="/sources/gongjiao.svg"></image>
+          </view>
+          <view class="label-style label-margin">
+            <image class="label-img" src="/sources/ditie.svg"></image>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 交通方式 -->
+
+      <view class="commit">
+            <van-button type="default" round="true" block="true" color="#48c0a3">规划路线</van-button>
+      </view>
+
+      <view class="placeholder"></view>
+
     </scroll-view>
 
   </view>
