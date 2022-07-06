@@ -1,2 +1,12 @@
-<!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<!--message.wxml-->
+
+<view style="height: {{naviHeight}}px;"></view>
+
+<view class="header-container" style="width: {{screenWidth*0.95}}px;">
+  <navigator class="back-container" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
+  <view class="head-text">消息</view>
+</view>
+
+<view class="list">
+  <view class="text-display">暂时没有通知</view>
+</view>

@@ -1,11 +1,30 @@
 // pages/qa/qa.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    naviHeight: app.globalData.naviHeight,
+    screenWidth: app.globalData.screenWidth,
+    screenHeight: app.globalData.screenHeight,
+    activeNames: ['3']
+  },
+  
+  onChange: function(event) {
+    this.setData({
+      activeNames: event.detail
+    });
+  },
 
+  onOpen: function(event) {
+    Toast(`展开: ${event.detail}`);
+  },
+
+  onClose: function(event) {
+    Toast(`关闭: ${event.detail}`);
   },
 
   /**

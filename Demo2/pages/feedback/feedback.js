@@ -1,11 +1,15 @@
 // pages/feedback/feedback.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    naviHeight: app.globalData.naviHeight,
+    screenWidth: app.globalData.screenWidth,
+    screenHeight: app.globalData.screenHeight
   },
 
   /**

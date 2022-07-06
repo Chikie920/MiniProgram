@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/message/message",
     "pages/feedback/feedback",
     "pages/qa/qa",
-    "pages/index/index",
     "pages/route/route",
     "pages/ar_show/ar_show",
     "pages/ar/ar",
@@ -37,7 +37,9 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-transition": "@vant/weapp/transition/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index"
   },
   "sitemapLocation": "sitemap.json"
 }

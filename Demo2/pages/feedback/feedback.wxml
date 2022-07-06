@@ -1,2 +1,22 @@
 <!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+
+<view style="height: {{naviHeight}}px;"></view>
+
+<view class="header-container" style="width: {{screenWidth*0.95}}px;">
+  <navigator class="back-container" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
+  <view class="head-text">反馈</view>
+</view>
+
+<view class="input-container">
+
+  <view class="input">
+    <van-cell-group>
+      <van-field value="{{ message }}" type="textarea" placeholder="请输入留言" autosize border="{{ false }}" />
+    </van-cell-group>
+  </view>
+
+  <view class="commit">
+    <van-button type="default" round="true" block="true" color="#48c0a3">提交反馈信息</van-button>
+  </view>
+
+</view>

@@ -1,1 +1,54 @@
 /* pages/feedback/feedback.wxss */
+
+.header-container {
+  height: 3rem;
+  /* background-color: pink; */
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.back-container {
+  width: 3rem;
+  height: inherit;
+  /* background-color: plum; */
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.head-text {
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+/* 顶部样式 */
+
+.input-container {
+  width: 90vw;
+  /* background-color: pink; */
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.input {
+  width: inherit;
+  min-height: 10rem;
+  background-color: #f4f5f6;
+}
+
+.custom-class, .van-cell-group, .van-hairline--top-bottom, .van-cell, .van-cell--borderless {
+  min-height: 10rem;
+  background-color: #f4f5f6 !important;
+}
+
+.commit {
+  margin-top: 3rem;
+}
