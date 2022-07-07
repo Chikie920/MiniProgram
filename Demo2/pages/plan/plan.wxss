@@ -32,7 +32,7 @@
   margin:0 auto;
   margin-top: 2rem;
   /* background-color: bisque; */
-  width: 80vw;
+  width: 90vw;
   height: 3rem;
   border-radius: 1rem;
   display: flex;

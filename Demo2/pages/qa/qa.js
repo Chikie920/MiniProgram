@@ -10,7 +10,7 @@ Page({
     naviHeight: app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
     screenHeight: app.globalData.screenHeight,
-    activeNames: ['3']
+    activeNames: ['4']
   },
   
   onChange: function(event) {

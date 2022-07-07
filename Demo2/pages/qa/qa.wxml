@@ -11,12 +11,15 @@
   <van-collapse value="{{ activeNames }}" bind:change="onChange" bind:open="onOpen"
   bind:close="onClose">
   <van-collapse-item title="关于定位" name="1" size="large">
-    我们不会收集您的位置信息，仅使用当前位置进行地图定位与路线规划
+    我们不会收集您的位置信息，仅使用当前位置进行天气查询、地图定位与路线规划
   </van-collapse-item>
   <van-collapse-item title="关于账户信息" name="2" size="large">
-    登录账户是为了方便对您偏爱的景点数据进行记录
+    登录账户是为了对小程序运行时的必要数据进行记录
   </van-collapse-item>
-  <van-collapse-item title="没有找到相关问题" name="3" size="large">
+  <van-collapse-item title="关于天气信息" name="3" size="large">
+    天气信息为全武汉市实时天气，与您当前位置天气情况可能存在差别
+  </van-collapse-item>
+  <van-collapse-item title="没有找到相关问题" name="4" size="large">
     点此进行<navigator style="display: inline; color: #065279;" url="/pages/feedback/feedback" open-type="redirect">问题反馈</navigator>，我们会及时进行解答，请关注消息提醒
   </van-collapse-item>
 </van-collapse>

@@ -10,7 +10,7 @@
   <view class="header" style="width: {{screenWidth*0.9}}px;">
     <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
       <view class="weather-container">
-        <image class="weather" src="/sources/clear-day.svg"></image>
+        <image class="weather" src="/sources/weather/{{weather}}.svg"></image>
         <view class="lang-container" bindtap="change_lang">
           <image class="lang-img" src="/sources/yuyan1.png"></image>
           <text class="lang-text">{{lang[lang_change]}}</text>
@@ -63,7 +63,7 @@
   </view>
   <!-- 功能选项 -->
 
-  <view class="popular-text" style="width: {{screenWidth*0.9}}px;">Popular places</view>
+  <view class="popular-text" style="width: {{screenWidth*0.9}}px;">热门景点</view>
   <view class="hot-places" style="width: {{screenWidth*0.9}}px; height: 14rem;">
     <scroll-view class="places-container" scroll-x>
 
@@ -103,22 +103,22 @@
   <!-- 热门景点 -->
 
   <view class="explore" style="width: {{screenWidth*0.9}}px;">
-    <view class="explore-text" style="width: {{screenWidth*0.9}}px;">Explore</view>
+    <view class="explore-title" style="width: {{screenWidth*0.9}}px;">热门全景</view>
     <scroll-view class="explore-scroll" scroll-x>
 
     <view class="explore-container">
       <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">Cat</view>
+      <view class="explore-text">极地海洋公园</view>
     </view>
 
     <view class="explore-container explore-container-style">
       <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">Cat</view>
+      <view class="explore-text">武汉商学院</view>
     </view>
 
     <view class="explore-container explore-container-style">
       <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">Cat</view>
+      <view class="explore-text">黄鹤楼</view>
     </view>
 
     <view class="explore-container explore-container-style">

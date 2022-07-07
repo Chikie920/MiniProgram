@@ -207,8 +207,7 @@
   margin-top: 2rem; 
 }
 
-.explore-text {
-  /* background-color: pink; */
+.explore-title {
   font-size: 1.2rem;
 }
 
@@ -221,16 +220,16 @@
 }
 
 .explore-container {
-  width: 3.5rem;
+  width: 5rem;
   min-height: 3.5rem;
   /* background-color: ivory; */
-  border-radius: 100%;
   text-align: center;
   display: inline-block;
+  overflow: hidden;
 }
 
 .explore-container-style {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 
 .explore-img-container {
@@ -241,11 +240,16 @@
 }
 
 .explore-img {
+  margin: 0 auto;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 100%;
   box-shadow: 1.5px 1.5px 2px #f4f5f6,
               -1.5px -1.5px 2px #f4f5f6;
+}
+
+.explore-text {
+  font-size: 1rem;
 }
 
 /* 探索 */
