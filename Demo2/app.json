@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/detail/detail",
     "pages/index/index",
     "pages/message/message",
     "pages/feedback/feedback",
@@ -10,7 +11,6 @@
     "pages/add_plan/add_plan",
     "pages/setting/setting",
     "pages/plan/plan",
-    "pages/detail/detail",
     "pages/like/like",
     "pages/map/map",
     "pages/place/place",

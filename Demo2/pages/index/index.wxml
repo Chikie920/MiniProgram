@@ -67,33 +67,14 @@
   <view class="hot-places" style="width: {{screenWidth*0.9}}px; height: 14rem;">
     <scroll-view class="places-container" scroll-x>
 
-      <view class="places-card-container">
+      <view class="places-card-container {{index>0?'places-card-style':''}}" wx:for="{{places_card_data}}">
         <view class="places-card">
-          <view class="places-img"><image src="https://images.unsplash.com/photo-1655986406104-633c9eb05a8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
-          <view class="places-info">
-            <text class="place-name">武汉花博会</text>
-            <text class="place-loc">蔡甸区-东风大道</text>
+          <view class="places-img">
+            <image src="{{item.img_url}}"></image>
           </view>
-        </view>
-      </view>
-
-
-      <view class="places-card-container places-card-style">
-        <view class="places-card">
-          <view class="places-img"><image src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
           <view class="places-info">
-            <text class="place-name">武汉花博会</text>
-            <text class="place-loc">蔡甸区-东风大道</text>
-          </view>
-        </view>
-      </view>
-
-      <view class="places-card-container places-card-style">
-        <view class="places-card">
-          <view class="places-img"><image src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
-          <view class="places-info">
-            <text class="place-name">武汉花博会</text>
-            <text class="place-loc">蔡甸区-东风大道</text>
+            <text class="place-name">{{item.place_name}}</text>
+            <text class="place-loc">{{item.place_loc}}</text>
           </view>
         </view>
       </view>
@@ -106,34 +87,9 @@
     <view class="explore-title" style="width: {{screenWidth*0.9}}px;">热门全景</view>
     <scroll-view class="explore-scroll" scroll-x>
 
-    <view class="explore-container">
-      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">极地海洋公园</view>
-    </view>
-
-    <view class="explore-container explore-container-style">
-      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">武汉商学院</view>
-    </view>
-
-    <view class="explore-container explore-container-style">
-      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">黄鹤楼</view>
-    </view>
-
-    <view class="explore-container explore-container-style">
-      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">Cat</view>
-    </view>
-
-    <view class="explore-container explore-container-style">
-      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">Cat</view>
-    </view>
-
-    <view class="explore-container explore-container-style">
-      <view class="explore-img-container"><image class="explore-img" src="https://img.yzcdn.cn/vant/cat.jpeg"></image></view>
-      <view class="explore-text">Cat</view>
+    <view class="explore-container {{index>0?'explore-container-style':''}}" wx:for="{{ar_data}}">
+      <view class="explore-img-container"><image class="explore-img" src="{{item.img_url}}"></image></view>
+      <view class="explore-text">{{item.place_name}}</view>
     </view>
 
     </scroll-view>

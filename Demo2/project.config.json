@@ -1,5 +1,6 @@
 {
   "appid": "wxe2e77a6b1b9f1b16",
+  "cloudfunctionRoot": "cloud/",
   "compileType": "miniprogram",
   "libVersion": "2.24.6",
   "packOptions": {

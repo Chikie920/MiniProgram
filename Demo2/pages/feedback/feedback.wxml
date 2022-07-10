@@ -11,12 +11,12 @@
 
   <view class="input">
     <van-cell-group>
-      <van-field value="{{ message }}" type="textarea" placeholder="请输入留言" autosize border="{{ false }}" />
+      <van-field value="{{ message }}" type="textarea" placeholder="请输入留言" autosize border="{{ false }}" bind:input="input" />
     </van-cell-group>
   </view>
 
   <view class="commit">
-    <van-button type="default" round="true" block="true" color="#48c0a3">提交反馈信息</van-button>
+    <van-button type="default" round="true" block="true" color="#48c0a3" bindtap="commit">提交反馈信息</van-button>
   </view>
 
 </view>

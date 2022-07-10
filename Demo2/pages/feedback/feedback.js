@@ -1,5 +1,6 @@
 // pages/feedback/feedback.js
 const app = getApp();
+const db = wx.cloud.database();
 
 Page({
 
@@ -9,7 +10,24 @@ Page({
   data: {
     naviHeight: app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
-    screenHeight: app.globalData.screenHeight
+    screenHeight: app.globalData.screenHeight,
+    input_value: ''
+  },
+
+  input(event) {
+    this.setData({
+      input_value: event.detail
+    });
+  },
+
+  commit() {
+    if (this.data.input_value != '') {
+      db.collection('feedback').add({
+        data:{
+          feedback: this.data.input_value
+        }
+      });
+    }
   },
 
   /**
