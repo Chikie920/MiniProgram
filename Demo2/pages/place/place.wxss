@@ -92,13 +92,11 @@ van-search {
 
 .card-info {
   /* background-color: lightblue; */
-  overflow: hidden;
+  width: inherit;
   position: relative;
   left: 1rem;
-}
-
-.place-name, .place-loc, .other-info {
-  width: inherit;
+  word-break: break-all;
+  white-space: normal;
 }
 
 .place-name {

@@ -18,19 +18,18 @@
 <view class="places-list" style="width: {{screenWidth*0.9}}px; min-height: 10rem;">
   <scroll-view class="places-scroll" scroll-y>
 
-    <view wx:for="{{place_list}}">
+    <navigator wx:for="{{place_list}}" url='/pages/detail/detail?place_name={{item.name}}&place_loc={{item.loc}}&header_img={{item.url_header}}0.jpg'>
       <view class="card" style="height: {{screenHeight*0.2}}px;">
         <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
           <image src="{{item.url_header}}0.jpg"></image>
         </view>
-        <view class="card-info" style="min-width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
+        <view class="card-info" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
           <view class="place-name">{{item.name}}</view>
-          <view class="place-loc">{{item.place_loc}}</view>
-          <view class="other-info">xxx</view>
+          <view class="other-info">{{item.info}}</view>
         </view>
       </view>
       <van-divider class="card-gap" customStyle="color: black;"></van-divider>
-    </view>
+    </navigator>
 
    
 

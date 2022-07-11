@@ -10,13 +10,21 @@ Page({
   data: {
     naviHeight: app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
-    screenHeight: app.globalData.screenHeight
+    screenHeight: app.globalData.screenHeight,
+    place_list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    db.collection('place_detail').where({}).get({
+      success:(res)=>{
+        this.setData({
+          place_list: res.data
+        })
+      }
+    });
 
   },
 
