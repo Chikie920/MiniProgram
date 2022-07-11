@@ -9,28 +9,25 @@
 </view>
 <!-- 顶部容器 -->
 
-<view class="main-img" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.27}}px;"></view>
+<view class="main-img" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.27}}px;"><image src="{{header_img}}" style="width: 100%;"></image></view>
 <!-- 头图 -->
 
 <view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">
-  <view class="place-name">理塘</view>
-  <view class="place-loc">xxxxxxxxx</view>
+  <view class="place-name">{{place_name}}</view>
+  <view class="place-loc">{{place_loc}}</view>
 </view>
 <!-- 景点名字、位置与收藏 -->
 
 <view class="desc" style="width: {{screenWidth*0.95}}px;">
+  {{detail}}
 </view>
 <!-- 介绍与资讯 -->
 
 <view class="pictures" style="width: {{screenWidth*0.95}}px;">
   <scroll-view class="pictures-scroll" scroll-x>
-    <view class="pic-card"></view>
-    <view class="pic-card card-style"></view>
-    <view class="pic-card card-style"></view>
-    <view class="pic-card card-style"></view>
-    <view class="pic-card card-style"></view>
-    <view class="pic-card card-style"></view>
-    <view class="pic-card card-style"></view>
+    <view class="pic-card {{index>0?'card-style':''}}" wx:for="{{img_list}}">
+      <image src="{{img_header_url}}{{item}}.jpg" style="width: inherit; height: inherit;"></image>
+    </view>
   </scroll-view>
 </view>
 <!-- 景点照片 -->

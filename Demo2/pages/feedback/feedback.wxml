@@ -19,4 +19,6 @@
     <van-button type="default" round="true" block="true" color="#48c0a3" bindtap="commit">提交反馈信息</van-button>
   </view>
 
+  <van-toast id="van-toast" />
+
 </view>

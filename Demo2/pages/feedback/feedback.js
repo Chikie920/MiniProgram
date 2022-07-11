@@ -1,4 +1,6 @@
 // pages/feedback/feedback.js
+import Toast from '@vant/weapp/toast/toast';
+
 const app = getApp();
 const db = wx.cloud.database();
 
@@ -21,12 +23,15 @@ Page({
   },
 
   commit() {
-    if (this.data.input_value != '') {
+    if (this.data.input_value != ''&&this.data.input_value.length>20) {
+      console.log(this.data.input_value.length)
       db.collection('feedback').add({
         data:{
           feedback: this.data.input_value
         }
       });
+    } else {
+      Toast('内容过于简单，请达到20字以上');
     }
   },
 

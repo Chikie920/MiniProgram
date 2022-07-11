@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 const app = getApp();
+const db = wx.cloud.database();
 
 Page({
 
@@ -9,13 +10,47 @@ Page({
   data: {
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
-    screenWidth: app.globalData.screenWidth
+    screenWidth: app.globalData.screenWidth,
+    header_img: '',
+    place_name: '',
+    place_loc: '',
+    detail: '',
+    img_counts: 0,
+    img_list: [],
+    img_header_url: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData({
+      header_img: options.header_img,
+      place_name: options.place_name,
+      place_loc: options.place_loc
+    });
+    // 上一页面传参
+
+    db.collection('place_detail').where({
+      name: this.data.place_name
+    }).get({
+      success:(res)=>{
+        this.setData({
+          detail: res.data[0].detail,
+          img_counts: res.data[0].img_counts,
+          img_header_url: res.data[0].url_header
+        });
+        let i;
+        let list=[];
+        for(i=0; i<this.data.img_counts; ++i){
+          list.push(i);
+        };
+        console.log(list)
+        this.setData({
+          img_list: list
+        });
+      }
+    })
 
   },
 
