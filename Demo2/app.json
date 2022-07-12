@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/setting/setting",
     "pages/index/index",
     "pages/login/login",
     "pages/place/place",
@@ -11,7 +12,6 @@
     "pages/ar_show/ar_show",
     "pages/ar/ar",
     "pages/add_plan/add_plan",
-    "pages/setting/setting",
     "pages/plan/plan",
     "pages/like/like",
     "pages/map/map",
