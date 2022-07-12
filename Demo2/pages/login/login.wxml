@@ -1,0 +1,3 @@
+<!--login.wxml-->
+<button bindtap="login" style="margin-top: 100px;">授权登录</button>
+<van-dialog id="van-dialog" bind:confirm="onclose"/>

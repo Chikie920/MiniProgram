@@ -1,6 +1,6 @@
 // pages/setting/setting.js
 const app = getApp();
-
+const db = wx.cloud.database();
 
 Page({
 
@@ -10,14 +10,27 @@ Page({
   data: {
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
-    screenWidth: app.globalData.screenWidth
+    screenWidth: app.globalData.screenWidth,
+    openid: app.globalData.openid,
+    avatar_url: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let that = this;
+    console.error(this.data.openid);
+    db.collection('user_data').where({
+      _openid: this.data.openid
+    }).get({
+      success(res) {
+        that.setData({
+          avatar_url: res.data[0].avatar_url
+        });
+      }
+    });
+    // 获取用户头像
   },
 
   /**

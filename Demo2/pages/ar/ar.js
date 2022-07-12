@@ -1,5 +1,6 @@
 // pages/ar/ar.js
 const app = getApp();
+const db = wx.cloud.database();
 
 Page({
 
@@ -9,13 +10,21 @@ Page({
   data: {
     naviHeight: app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
-    screenHeight: app.globalData.screenHeight
+    screenHeight: app.globalData.screenHeight,
+    ar_list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    db.collection('ar_list').where({}).get({
+      success:(res)=>{
+        this.setData({
+          ar_list: res.data
+        });
+      }
+    });
 
   },
 

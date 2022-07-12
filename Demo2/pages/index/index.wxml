@@ -87,10 +87,10 @@
     <view class="explore-title" style="width: {{screenWidth*0.9}}px;">热门全景</view>
     <scroll-view class="explore-scroll" scroll-x>
 
-    <view class="explore-container {{index>0?'explore-container-style':''}}" wx:for="{{ar_data}}">
+    <navigator class="explore-container {{index>0?'explore-container-style':''}}" wx:for="{{ar_data}}" url="/pages/ar_show/ar_show">
       <view class="explore-img-container"><image class="explore-img" src="{{item.img_url}}"></image></view>
       <view class="explore-text">{{item.place_name}}</view>
-    </view>
+    </navigator>
 
     </scroll-view>
   </view>

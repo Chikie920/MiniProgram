@@ -1,5 +1,5 @@
 // index.js
-const app = getApp();
+let app = getApp();
 const db = wx.cloud.database();
 
 Page({
@@ -15,7 +15,8 @@ Page({
     weather: '晴',
     weather_list: ['冰雹', '多云', '雷暴', '雷阵雨', '晴', '雾', '小雨', '雪', '扬尘', '阴', '中雨', '大雨', '暴雨'],
     places_card_data: [],
-    ar_data: []
+    ar_data: [],
+    user_openid: ''
   },
   change_lang: function(event) {
     var change = (this.data.lang_change+1)%2;
@@ -25,6 +26,36 @@ Page({
   },
 
   onLoad(options) {
+    let that = this;
+    wx.cloud.callFunction({
+      name: 'get_openid',
+      success(res) {
+        that.setData({
+          user_openid: res.result.openid
+        });
+        app.globalData.openid = that.data.user_openid;
+        db.collection('user_data').where({
+          _openid: that.data.user_openid
+        }).get({
+          success(res) {
+            if(res.data.length == 0){
+              wx.redirectTo({
+                url: '/pages/login/login'
+              });
+            }
+          },
+          fail(res) {
+            this.onLoad();
+          }
+        });
+      },
+      fail(res) {
+        this.onLoad();
+      }
+    });
+    // 检测是否授权，并登录
+
+
     wx.request({
       url: this.data.weather_api_url+'key='+this.data.key+'&location='+this.data.city_code,
       success:(res)=> {
@@ -49,6 +80,7 @@ Page({
       },
 
     });
+    // 获取天气情况
 
     db.collection('main_place_info').where({}).get({
       success:(res)=>{
