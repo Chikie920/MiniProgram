@@ -1,5 +1,6 @@
 // pages/login/login.js
 import Dialog from '@vant/weapp/dialog/dialog';
+var app = getApp();
 const db = wx.cloud.database();
 
 Page({
@@ -9,7 +10,6 @@ Page({
    */
   data: {
     user_name: '',
-    user_openid: '',
     user_headerimg: ''
   },
 
@@ -28,6 +28,7 @@ Page({
             avatar_url: that.data.user_headerimg
           },
           success(res) {
+            app.globalData.avatar_url = that.data.user_headerimg; // 保存头像url
             wx.redirectTo({
               url: '/pages/index/index'
             });

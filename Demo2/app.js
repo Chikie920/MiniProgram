@@ -5,7 +5,8 @@ App({
     screenWidth: 0,
     screenHeight: 0,
     naviHeight: 0,
-    openid: ''
+    openid: '',
+    avatar_url: ''
   },
 
   onLaunch(){

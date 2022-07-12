@@ -1,5 +1,5 @@
 // index.js
-let app = getApp();
+var app = getApp();
 const db = wx.cloud.database();
 
 Page({
@@ -42,6 +42,10 @@ Page({
               wx.redirectTo({
                 url: '/pages/login/login'
               });
+            } else {
+              if(app.globalData.avatar_url==''){
+                app.globalData.avatar_url = res.data[0].avatar_url;
+              }
             }
           },
           fail(res) {
