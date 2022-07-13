@@ -11,12 +11,41 @@ Page({
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
+    like_list: app.globalData.like_list,
     place_name: '',
     place_loc: '',
     detail: '',
     img_counts: 0,
     img_list: [],
-    img_header_url: ''
+    img_header_url: '',
+    islike: 0
+  },
+
+  onChange_unlike(event){
+    var new_list=app.globalData.like_list;
+    new_list.splice(new_list.indexOf(this.data.place_name), 1);
+    db.collection('user_data').where({_openid: this.data.openid}).update({
+      data: {
+        like: new_list
+      }
+    });
+    wx.redirectTo({
+      url: '/pages/detail/detail?place_name='+this.data.place_name,
+    });
+  },
+
+  onChange_like(event){
+    var new_list=app.globalData.like_list;
+    new_list.push(this.data.place_name);
+    console.error(new_list);
+    db.collection('user_data').where({_openid: this.data.openid}).update({
+      data: {
+        like: new_list
+      }
+    });
+    wx.redirectTo({
+      url: '/pages/detail/detail?place_name='+this.data.place_name,
+    });
   },
 
   /**
@@ -26,7 +55,6 @@ Page({
     this.setData({
       place_name: options.place_name
     });
-    // 上一页面传参
 
     db.collection('place_detail').where({
       name: this.data.place_name
@@ -43,13 +71,17 @@ Page({
         for(i=0; i<this.data.img_counts; ++i){
           list.push(i);
         };
-        console.log(list)
         this.setData({
           img_list: list
         });
       }
-    })
+    });
 
+    if(this.data.like_list.indexOf(this.data.place_name)!=-1){
+      this.setData({
+        islike: 1
+      });
+    } //在喜爱列表中
   },
 
   /**

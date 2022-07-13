@@ -15,6 +15,26 @@
 <view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">
   <view class="place-name">{{place_name}}</view>
   <view class="place-loc">{{place_loc}}</view>
+  <view class="heart">
+          <van-rate
+            wx:if="{{islike}}"
+            void-color="#ee0a24"
+            color="#c7c7c7"
+            icon="like"
+            count="1"
+            void-icon="like"
+            bind:change="onChange_unlike"
+          />
+          <van-rate
+            wx:if="{{islike-1}}"
+            void-color="#c7c7c7"
+            color="#ee0a24"
+            icon="like"
+            count="1"
+            void-icon="like"
+            bind:change="onChange_like"
+          />
+  </view>
 </view>
 <!-- 景点名字、位置与收藏 -->
 

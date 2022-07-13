@@ -16,7 +16,6 @@
         <view class="heart">
           <van-rate
             id="{{item}}"
-            value="{{ value }}"
             void-color="#ee0a24"
             color="#ee0a24"
             icon="like"

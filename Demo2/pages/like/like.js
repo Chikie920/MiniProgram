@@ -18,10 +18,10 @@ Page({
   },
 
   onChange(event){
-    console.error(event);
     var get_id = event.target.id;
     var new_list=this.data.like_list;
-    new_list.splice(get_id, 1);
+    var index = this.data.like_list.indexOf(get_id);
+    new_list.splice(index, 1);
     db.collection('user_data').where({
       _openid: this.data.openid
     }).update({
@@ -29,26 +29,23 @@ Page({
         like: new_list
       }
     });
-    this.onLoad();
+    wx.redirectTo({
+      url: '/pages/like/like',
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    var that = this;
-    db.collection('user_data').where({
-      _openid: this.data.openid
-    }).get({
-      success(res){
-        that.setData({
-          like_list: res.data[0].like
-        });
-        if(that.like_list!=[]){
-          that.data.text_status = 0;
-        }
-      }
+    this.setData({
+      like_list: app.globalData.like_list
     });
+    if(this.data.like_list!=[]){
+      this.setData({
+        text_status: 0
+      });
+    }
   },
 
   /**
