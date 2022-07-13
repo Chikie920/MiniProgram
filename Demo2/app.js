@@ -36,7 +36,9 @@ App({
                       });
                     } else {
                       that.globalData.avatar_url = res.data[0].avatar_url;
-                      that.globalData.like_list = res.data[0].like;
+                      if(res.data[0].like!=undefined){
+                        that.globalData.like_list = res.data[0].like;
+                      }  
                     }
                   }
                 });

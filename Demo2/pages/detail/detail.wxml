@@ -15,7 +15,7 @@
 <view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">
   <view class="place-name">{{place_name}}</view>
   <view class="place-loc">{{place_loc}}</view>
-  <view class="heart">
+  <view class="heart">{{islike}}{{islike-1}}
           <van-rate
             wx:if="{{islike}}"
             void-color="#ee0a24"

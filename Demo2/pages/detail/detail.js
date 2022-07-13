@@ -1,5 +1,5 @@
 // pages/detail/detail.js
-const app = getApp();
+var app = getApp();
 const db = wx.cloud.database();
 
 Page({
@@ -11,7 +11,7 @@ Page({
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
-    like_list: app.globalData.like_list,
+    like_list: [],
     place_name: '',
     place_loc: '',
     detail: '',
@@ -22,11 +22,12 @@ Page({
   },
 
   onChange_unlike(event){
-    var new_list=app.globalData.like_list;
-    new_list.splice(new_list.indexOf(this.data.place_name), 1);
+    // var new_list=app.globalData.like_list;
+    // new_list.splice(new_list.indexOf(this.data.place_name), 1);
+    app.globalData.like_list.splice(app.globalData.like_list.indexOf(this.data.place_name), 1);
     db.collection('user_data').where({_openid: this.data.openid}).update({
       data: {
-        like: new_list
+        like:  app.globalData.like_list
       }
     });
     wx.redirectTo({
@@ -35,12 +36,14 @@ Page({
   },
 
   onChange_like(event){
+    console.error('applist',app.globalData.like_list);
     var new_list=app.globalData.like_list;
     new_list.push(this.data.place_name);
+    app.globalData.like_list = new_list;
     console.error(new_list);
     db.collection('user_data').where({_openid: this.data.openid}).update({
       data: {
-        like: new_list
+        like: app.globalData.like_list
       }
     });
     wx.redirectTo({
@@ -52,8 +55,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.error(app.globalData)
     this.setData({
-      place_name: options.place_name
+      place_name: options.place_name,
+      like_list: app.globalData.like_list
     });
 
     db.collection('place_detail').where({
@@ -77,10 +82,12 @@ Page({
       }
     });
 
+    console.error(this.data.like_list.indexOf(this.data.place_name), this.data);
     if(this.data.like_list.indexOf(this.data.place_name)!=-1){
       this.setData({
         islike: 1
       });
+      console.error('修改', this.data);
     } //在喜爱列表中
   },
 
