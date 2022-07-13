@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/setting/setting",
     "pages/index/index",
+    "pages/setting/setting",
+    
     "pages/login/login",
     "pages/place/place",
     "pages/detail/detail",

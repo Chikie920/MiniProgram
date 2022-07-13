@@ -10,21 +10,23 @@ Page({
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
-    avatar_url: app.globalData.avatar_url
+    avatar_url: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      avatar_url: app.globalData.avatar_url
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    
   },
 
   /**

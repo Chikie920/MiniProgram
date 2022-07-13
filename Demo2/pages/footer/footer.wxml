@@ -1,7 +1,7 @@
 <template name="footer">
   <view class="footer" style="width: {{screenWidth}}px; height: {{screenHeight*0.1}}px;">
     <view class="footer-container" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.1}}px;">
-      <navigator class="footer-label" url="/pages/index/index">
+      <navigator class="footer-label" url="/pages/index/index" open-type="redirect">
         <text class="iconfont icon-shouye footer_img_1" style="font-size: 1.5rem;font-weight: 600;"></text>
       </navigator>
       <navigator class="footer-label" url="/pages/like/like" open-type="redirect">
