@@ -18,7 +18,7 @@
 <view class="places-list" style="width: {{screenWidth*0.9}}px; min-height: 10rem;">
   <scroll-view class="places-scroll" scroll-y>
 
-    <navigator wx:for="{{place_list}}" url='/pages/detail/detail?place_name={{item.name}}&place_loc={{item.loc}}&header_img={{item.url_header}}0.jpg'>
+    <navigator wx:for="{{place_list}}" url='/pages/detail/detail?place_name={{item.name}}'>
       <view class="card" style="height: {{screenHeight*0.2}}px;">
         <view class="card-img" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
           <image src="{{item.url_header}}0.jpg"></image>

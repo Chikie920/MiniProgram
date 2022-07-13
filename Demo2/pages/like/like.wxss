@@ -25,48 +25,56 @@
 }
 
 .place-card {
-  /* background-color: lightblue; */
+  width: 100vw;
+  height: 12vh;
   margin: 0 auto;
   margin-top: 1rem;
   position: relative;
 }
 
-.card-img {
+/* .card-img {
   width: inherit;
   height: inherit;
-  /* background-color: white; */
+  background-color: white;
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 2px 2px 2px #f4f5f6,
   -1px -1px 1px #f4f5f6;
-}
+} */
 
-.place-img {
+/* .place-img {
   width: inherit;
-}
+} */
 
 .place-info {
-  width: inherit;
-  height: inherit;
-  position: absolute;
-  top: 0px;
-  /* background-color: brown; */
+  width: 90vw;
+  height: 10vh;
+  border-radius: 1.2rem;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px #f4f5f6,
+  -2px -2px 2px #f4f5f6;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
-.place-name, .place-loc {
+.heart {
+  display: flex;
+  min-width: 1rem;
+  min-height: 1rem;
+  text-align: center;
   margin-left: 1rem;
-  color: white;
 }
 
 .place-name {
-  position: absolute;
-  bottom: 3rem;
-  font-size: 1.8rem;
+  font-size: 1.25rem;
   font-weight: 600;
+  margin-left: 1.5rem;
 }
 
-.place-loc {
-  position: absolute;
-  bottom: 1rem;
-  font-size: 1.2rem;
+.text-tips {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+  opacity: 0.5;
 }

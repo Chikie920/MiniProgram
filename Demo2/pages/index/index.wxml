@@ -67,7 +67,7 @@
   <view class="hot-places" style="width: {{screenWidth*0.9}}px; height: 14rem;">
     <scroll-view class="places-container" scroll-x>
 
-      <navigator class="places-card-container {{index>0?'places-card-style':''}}" wx:for="{{places_card_data}}" url='/pages/detail/detail?place_name={{item.place_name}}&place_loc={{item.place_loc}}&header_img={{item.img_url}}'>
+      <navigator class="places-card-container {{index>0?'places-card-style':''}}" wx:for="{{places_card_data}}" url='/pages/detail/detail?place_name={{item.place_name}}'>
         <view class="places-card">
           <view class="places-img">
             <image src="{{item.img_url}}"></image>

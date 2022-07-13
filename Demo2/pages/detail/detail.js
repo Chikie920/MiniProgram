@@ -11,7 +11,6 @@ Page({
     naviHeight: app.globalData.naviHeight,
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
-    header_img: '',
     place_name: '',
     place_loc: '',
     detail: '',
@@ -25,9 +24,7 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      header_img: options.header_img,
-      place_name: options.place_name,
-      place_loc: options.place_loc
+      place_name: options.place_name
     });
     // 上一页面传参
 
@@ -38,7 +35,8 @@ Page({
         this.setData({
           detail: res.data[0].detail,
           img_counts: res.data[0].img_counts,
-          img_header_url: res.data[0].url_header
+          img_header_url: res.data[0].url_header,
+          place_loc: res.data[0].loc
         });
         let i;
         let list=[];

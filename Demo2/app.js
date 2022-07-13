@@ -20,25 +20,25 @@ App({
     this.globalData.naviHeight = wx.getWindowInfo().statusBarHeight;
   
     var that = this;
-    const db = wx.cloud.database();
-    wx.cloud.callFunction({
-        name: 'get_openid',
-        success(res){ // 成功获取openid
-          that.globalData.openid = res.result.openid;
-          db.collection('user_data').where({
-                  _openid: that.globalData.openid
-                }).get({
-                  success(res){ // 成功获取数据库
-                    if(res.data.length == 0){
-                      wx.redirectTo({
-                        url: '/pages/login/login'
-                      });
-                    } else {
-                      that.globalData.avatar_url = res.data[0].avatar_url;
-                    }
-                  }
-                });
-        }
-    });
+    // const db = wx.cloud.database();
+    // wx.cloud.callFunction({
+    //     name: 'get_openid',
+    //     success(res){ // 成功获取openid
+    //       that.globalData.openid = res.result.openid;
+    //       db.collection('user_data').where({
+    //               _openid: that.globalData.openid
+    //             }).get({
+    //               success(res){ // 成功获取数据库
+    //                 if(res.data.length == 0){
+    //                   wx.redirectTo({
+    //                     url: '/pages/login/login'
+    //                   });
+    //                 } else {
+    //                   that.globalData.avatar_url = res.data[0].avatar_url;
+    //                 }
+    //               }
+    //             });
+    //     }
+    // });
   }
 })

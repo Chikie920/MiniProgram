@@ -9,7 +9,7 @@
 </view>
 <!-- 顶部容器 -->
 
-<view class="main-img" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.27}}px;"><image src="{{header_img}}" style="width: 100%;"></image></view>
+<view class="main-img" style="width: {{screenWidth*0.95}}px; height: {{screenHeight*0.27}}px;"><image src="{{img_header_url}}0.jpg" style="width: 100%;"></image></view>
 <!-- 头图 -->
 
 <view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">

@@ -8,40 +8,26 @@
 </view>
 
 <view class="like-container" style="min-height: {{screenHeight*0.85}}px;">
-  <scroll-view class="like-list-container" scroll-y style="width: {{screenWidth*0.95}}px;">
+  <scroll-view class="like-list-container" scroll-y>
+    <view class="text-tips" wx:if="{{text_status}}">这里空空如也，快去添加喜爱的景点吧!</view>
 
-    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
-      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
+    <view class="place-card" wx:for="{{like_list}}">
       <view class="place-info">
-        <view class="place-name">New York</view>
-        <view class="place-loc">xxxxxx</view>
+        <view class="heart">
+          <van-rate
+            id="{{item}}"
+            value="{{ value }}"
+            void-color="#ee0a24"
+            color="#ee0a24"
+            icon="like"
+            count="1"
+            void-icon="like"
+            bind:change="onChange"
+          />
+        </view>
+        <view class="place-name">{{item}}</view>
       </view>
     </view>
-
-    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
-      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
-      <view class="place-info">
-        <view class="place-name">New York</view>
-        <view class="place-loc">xxxxxx</view>
-      </view>
-    </view>
-
-    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
-      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
-      <view class="place-info">
-        <view class="place-name">New York</view>
-        <view class="place-loc">xxxxxx</view>
-      </view>
-    </view>
-
-    <view class="place-card" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25}}px;">
-      <view class="card-img"><image class="place-img" src="https://images.unsplash.com/photo-1655966722772-8d777f79e376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"></image></view>
-      <view class="place-info">
-        <view class="place-name">New York</view>
-        <view class="place-loc">xxxxxx</view>
-      </view>
-    </view>
-
     
 
   </scroll-view>
