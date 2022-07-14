@@ -15,8 +15,8 @@
     "pages/add_plan/add_plan",
     "pages/plan/plan",
     "pages/map/map",
-    "pages/footer/footer"
-
+    "pages/footer/footer",
+    "pages/plan_detail/plan_detail"
   ],
   "permission": {
     "scope.userLocation": {
@@ -44,7 +44,9 @@
     "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-image": "@vant/weapp/image/index",
     "van-toast": "@vant/weapp/toast/index",
-    "van-rate": "@vant/weapp/rate/index"
+    "van-rate": "@vant/weapp/rate/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
   },
   "sitemapLocation": "sitemap.json"
 }

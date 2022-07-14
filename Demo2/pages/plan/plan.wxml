@@ -6,18 +6,18 @@
 
 <view class="header" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.15}}px;">
   <view class="header-text">Plan</view>
-  <navigator url="/pages/add_plan/add_plan">
-    <van-icon name="add-o" class="add-icon"/>
-  </navigator>
+  <view bindtap="add_plan">
+    <van-icon name="add-o" class="add-icon" size="1.2rem"/>
+  </view>
 </view>
 
-<scroll-view class="plan-scroll" scroll-y style="width: {{screenWidth*0.9}}px; min-height: {{screenHeight*0.85}}px;">
+<scroll-view class="plan-scroll" scroll-y style="min-height: {{screenHeight*0.85}}px;">
 
 
-  <view class="plan-card">
+  <view class="plan-card" wx:for="{{plan_list}}" bindtap="goto_detail" id="{{index}}">
     <view class="text-container">
-      <view class="plan-name">计划名</view>
-      <view class="last-days">剩余天数</view>
+      <view class="plan-name">{{item.plan_name}}</view>
+      <view class="last-days">{{item.time}}</view>
     </view>
   </view>
 

@@ -16,7 +16,7 @@
 
 .add-icon {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 1rem;
   bottom: 2rem;
   right: 0rem;
 }
@@ -38,8 +38,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  box-shadow: 1.5px 1.5px 1.5px #f4f5f6,
-              -1.5px -1.5px 1.5px #f4f5f6;
+  box-shadow: 1.2px 1.2px 1.2px #f4f5f6,
+              -1.2px -1.2px 1.2px #f4f5f6;
 }
 
 .text-container {
@@ -48,12 +48,12 @@
 
 .plan-name {
   float: left;
-  margin-left:0.5rem;
+  margin-left:1rem;
 }
 
 .last-days {
   float: right;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .placeholder {

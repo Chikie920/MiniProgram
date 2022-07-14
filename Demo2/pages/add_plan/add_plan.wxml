@@ -6,7 +6,7 @@
 
   <view class="select-date" bindtap="showPopup">选择计划日期
     <van-icon name="notes-o" />
-    {{select_year}} {{select_month}} {{select_day}}
+    <text wx:if="{{select_year}}">{{select_year}}年 {{select_month}}月 {{select_day}}日</text>
   </view>
 
   <van-popup
@@ -34,50 +34,54 @@
   <view class="input-container">
     <van-cell-group>
     <van-field
-      value="{{ value }}"
       placeholder="计划名称"
       border="{{ true }}"
-      bind:change="onChange"
+      bind:input="get_title"
       maxlength="15"
       clearable="true"
-      class="input"
     />
 
-    <view class="activities">
-      <van-field
-        value="{{ value }}"
-        placeholder="输入活动"
-        border="{{ true }}"
-        bind:change="onChange"
-        maxlength="15"
-        clearable="true"
-        class="input"
-      />
-
-      <van-field
-        value="{{ value }}"
-        placeholder="输入活动"
-        border="{{ true }}"
-        bind:change="onChange"
-        maxlength="15"
-        clearable="true"
-        class="input"
-      />
-    </view>
-
-    <view class="new-activity">
-      <van-button type="default" icon="plus" round="true" block="true"></van-button>
-    </view>
-
     <!-- <view style="width: inherit; height: 100vh; background-color: khaki;"></view> -->
-
     </van-cell-group>
   </view>
 
+  <block class="add_input_container" wx:for="{{add_list}}">
+    <van-row>
+      <van-col span="22">
+        <view class="add_inputer">
+          <van-cell-group>
+            <van-field
+              id="{{ index }}"
+              placeholder="输入活动"
+              border="{{ true }}"
+              bind:change="onChange"
+              maxlength="20"
+              clearable="true"
+              bind:input="get_input"
+            />
+          </van-cell-group>
+        </view>
+      </van-col>
+      <van-col span="2">
+        <view class="delete_inputer" id="delete{{ index }}" bindtap="delete_inputer"><van-icon name="close" /></view>
+      </van-col>
+    </van-row>
+    
+  </block>
 
+
+
+  <view class="new-activity">
+    <van-button type="default" icon="plus" round="true" block="true" bind:click="add_inputer"></van-button>
+  </view>
 
 </view>
 
+
+<view class="place_holder"></view>
+
 <view class="commit-botton">
     <van-button type="default" round="true" block="true" bind:click="commit" style="width: inherit;">提交</van-button>
-  </view>
+</view>
+
+<van-dialog id="van-dialog" />

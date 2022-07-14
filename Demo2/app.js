@@ -1,7 +1,6 @@
 // app.js
 
 App({
-
   globalData: {
     screenWidth: 0,
     screenHeight: 0,
@@ -38,7 +37,7 @@ App({
                       that.globalData.avatar_url = res.data[0].avatar_url;
                       if(res.data[0].like!=undefined){
                         that.globalData.like_list = res.data[0].like;
-                      }  
+                      }
                     }
                   }
                 });

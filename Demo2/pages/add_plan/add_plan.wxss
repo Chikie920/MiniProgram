@@ -3,7 +3,7 @@
 .add-plan-container {
   /* background-color: pink; */
   width: 90vw;
-  height: 80vh;
+  min-height: 80vh;
   margin: 0 auto;
   position: relative;
 }
@@ -38,13 +38,30 @@ van-cell {
   font-weight: 400 !important;
 }
 
+.add_input_container {
+  width: inherit;
+  position: relative;
+}
 
+/* .add_inputer {
+
+} */
+
+.place_holder {
+  width: 100vw;
+  height: 5vh;
+}
+
+.delete_inputer {
+  margin-top: 2.7rem !important;
+  display: flex;
+  text-align: center;
+  margin-left: 1rem;
+}
 
 .commit-botton {
   margin: 0 auto;
   width: 90vw;
   height: 10vh;
   /* background-color: ivory; */
-  display: flex;
-  align-items: center;
 }

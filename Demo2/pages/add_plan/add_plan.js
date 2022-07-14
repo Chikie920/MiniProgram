@@ -1,5 +1,9 @@
 // pages/add_plan/add_plan.js
+import Dialog from '@vant/weapp/dialog/dialog';
+
 const app = getApp();
+const db = wx.cloud.database()
+var activities = [];
 
 Page({
 
@@ -15,16 +19,39 @@ Page({
     minDate: new Date().getTime(),
     formatter(type, value) {
       if (type === 'year') {
-        return `${value}年`;
+        return `${value}`;
       }
       if (type === 'month') {
-        return `${value}月`;
+        return `${value}`;
       }
-      return `${value}日`;
+      return `${value}`;
     },
     select_year: "",
     select_month: "",
     select_day: "",
+    add_list: [1],
+    plan_title: '',
+    date: '',
+    over: [0, 0],
+    plan: {plan_name: '', activity: [], time: ''},
+    old_plan: []
+  },
+
+  get_title(event) {
+    var old_over = this.data.over;
+    if(event.detail!="") {
+      old_over[1] = 1;
+      this.setData({
+        plan_title: event.detail,
+        over: old_over
+      });
+    } else {
+      old_over[1] = 0;
+      this.setData({
+        plan_title: '',
+        over: old_over
+      });
+    }
   },
 
   showPopup: function() {
@@ -49,24 +76,107 @@ Page({
 
   get_date: function(event) {
     let date = event.detail.getValues();
+    var old_over = this.data.over;
+    old_over[0] = 1;
     this.setData({
       select_year: date[0],
       select_month: date[1],
-      select_day: date[2]
+      select_day: date[2],
+      date: date[0]+'年'+date[1]+'月'+date[2]+'日',
+      over: old_over
     });
   },
 
   commit: function() {
-    wx.navigateBack({
-      delta: 1
+    var new_activities = [];
+    var i;
+    for(i=0; i<activities.length; ++i){
+      if(activities[i]!=''){
+        new_activities.push(activities[i]);
+      }
+    }
+    if(activities.length>0&&this.data.over[0]==1&&this.data.over[1]==1){
+      var plan_data = this.data.plan;
+      plan_data.plan_name = this.data.plan_title;
+      plan_data.activity = new_activities;
+      plan_data.time = this.data.date;
+      this.setData({
+        plan: plan_data
+      });
+      // console.error(this.data.plan);
+      // var addplan = [''];
+      var addplan = this.data.old_plan;
+      // console.error('addplan',addplan)
+      addplan.push(this.data.plan);
+      db.collection('user_data').where({
+        _openid: app.globalData.openid
+      }).update({
+        data: {
+          plan_list: addplan
+        }
+      });
+      wx.navigateBack({
+        delta: 1
+      });
+    } else {
+      Dialog.alert({
+        message: '请检查计划名、日期且至少添加一个活动',
+      }).then(() => {
+        // on close
+      });
+    }
+    // console.error(this.data.plan_title, this.data.date, activities);
+  },
+
+  add_inputer() {
+    var old = this.data.add_list;
+    if(old.length < 6) {
+      old.push(1);
+      this.setData({
+        add_list: old
+      });
+      activities.push('');
+    } else {
+      Dialog.alert({
+        message: '无法继续添加',
+      }).then(() => {
+        // on close
+      });
+    }
+
+  },
+
+  delete_inputer(event) {
+    var index = event.currentTarget.id[6];
+    var old = this.data.add_list;
+    old.splice(index, 1);
+    activities.splice(index, 1);
+    // console.error(index, this.data.add_list);
+    this.setData({
+      add_list: old
     });
+  },
+
+  get_input(event) {
+    var index = event.currentTarget.id;
+    var text = event.detail;
+    if(text!=""){
+      activities[index] = text;
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // console.error(options, options.plan_list.length);
+    if(options.plan_list.length!=0||options.plan_list!=undefined){
+      var plan_list_parse = JSON.parse(options.plan_list)
+      this.setData({
+        old_plan: plan_list_parse
+      });
+      console.error(this.data.old_plan)
+    }
   },
 
   /**
