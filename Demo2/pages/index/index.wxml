@@ -37,12 +37,12 @@
         </navigator>
 
 
-      <navigator class="label label-style" url="/pages/route/route">
+      <view class="label label-style" bindtap="route">
         <view class="label-img-continer">
           <image class="label-img" src="/sources/luxian.png"></image>
         </view>
         <text class="label-text">路线</text>
-      </navigator>
+      </view>
 
 
       <navigator class="label label-style" url="/pages/ar/ar">

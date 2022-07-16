@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/route/route",
+    "pages/map/map",
     "pages/like/like",
     "pages/setting/setting",
     "pages/login/login",
@@ -9,12 +11,10 @@
     "pages/message/message",
     "pages/feedback/feedback",
     "pages/qa/qa",
-    "pages/route/route",
     "pages/ar_show/ar_show",
     "pages/ar/ar",
     "pages/add_plan/add_plan",
     "pages/plan/plan",
-    "pages/map/map",
     "pages/footer/footer",
     "pages/plan_detail/plan_detail"
   ],
@@ -48,5 +48,11 @@
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.19",
+      "provider": "wx50b5593e81dd937a"
+    }
+  }
 }

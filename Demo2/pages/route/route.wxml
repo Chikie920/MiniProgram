@@ -24,14 +24,15 @@
     <scroll-view class="input-container" scroll-y>
       <view class="input-style">
         <van-cell-group>
-          <van-field value="{{ value }}" placeholder="输入起始地" border="{{ true }}" bind:change="onChange" maxlength="15" clearable="true" class="{{dialog_show}}" /> <!-- 根据当前定位确定class -->
+          <!-- <van-field value="{{ value }}" placeholder="输入起始地" border="{{ true }}" bind:change="onChange" maxlength="15" clearable="true" class="{{dialog_show}}" />  -->
+          <!-- 根据当前定位确定class -->
       
-          <view class="place">
-            <van-field value="{{ value }}" placeholder="输入目的地" border="{{ true }}" bind:change="onChange" maxlength="15" clearable="true" />
+          <view class="place" wx:for="{{input_list}}">
+            <van-field placeholder="输入目的地" border="{{ true }}" bind:change="onChange" maxlength="15" clearable="true" />
           </view>
       
           <view class="new-places">
-            <van-button type="default" icon="plus" round="true" block="true"></van-button>
+            <van-button type="default" icon="plus" round="true" block="true" bindtap="add_inputer"></van-button>
           </view>
       
         </van-cell-group>
@@ -50,9 +51,9 @@
           <view class="label-style label-margin">
             <image class="label-img" src="/sources/gongjiao.svg"></image>
           </view>
-          <view class="label-style label-margin">
+          <!-- <view class="label-style label-margin">
             <image class="label-img" src="/sources/ditie.svg"></image>
-          </view>
+          </view> -->
         </view>
       </scroll-view>
       <!-- 交通方式 -->

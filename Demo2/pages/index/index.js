@@ -2,6 +2,14 @@
 const app = getApp();
 const db = wx.cloud.database();
 
+let key = 'JOSBZ-R3KW3-YMN3J-33XBY-E67QH-CCBJD';  //使用在腾讯位置服务申请的key
+let referer = 'Demo2';   //调用插件的app的名称
+let endPoint = JSON.stringify({  //终点
+  'name': '武汉',
+  'latitude': 30.52,
+  'longitude': 114.31
+});
+
 Page({
   data:{
     naviHeight: app.globalData.naviHeight,
@@ -17,6 +25,13 @@ Page({
     places_card_data: [],
     ar_data: []
   },
+
+  route() {
+    wx.navigateTo({
+      url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+    });
+  },
+
   change_lang: function(event) {
     var change = (this.data.lang_change+1)%2;
     this.setData({

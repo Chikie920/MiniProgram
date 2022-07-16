@@ -20,7 +20,7 @@ Page({
   onLoad(options) {
     wx.getLocation({
       type: 'wgs84',
-      // altitude: true,
+      altitude: true,
       success:(res)=>{
         this.setData({
           latitude: res.latitude,

@@ -13,7 +13,27 @@ Page({
     screenHeight: app.globalData.screenHeight,
     longitude: 0,
     latitude: 0,
-    dialog_show: ""
+    dialog_show: "",
+    input_list: [1]
+  },
+
+  add_inputer() {
+    var old = this.data.input_list;
+    if(old.length<=3){
+      old.push(1);
+      this.setData({
+        input_list: old
+      });
+    } else {
+      Dialog.alert({
+        message: '最多只能添加4个目的地哦',
+      }).then(() => {
+        this.dialog_show = "";
+        // on close
+      });
+    }
+    
+
   },
 
   /**
@@ -31,12 +51,12 @@ Page({
       }
     }); /*获取定位*/
 
-    Dialog.alert({
-      message: '您当前并不在武汉，请输入一个武汉市内地点作为起始地',
-    }).then(() => {
-      this.dialog_show = "";
-      // on close
-    });
+    // Dialog.alert({
+    //   message: '您当前并不在武汉，请输入一个武汉市内地点作为起始地',
+    // }).then(() => {
+    //   this.dialog_show = "";
+    //   // on close
+    // });
 
   },
 
