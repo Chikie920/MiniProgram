@@ -10,7 +10,7 @@
 <!-- 顶部容器 -->
 
 <view class="searcher-container" style="width: {{screenWidth*0.95}}px;">
-  <van-search value="{{ value }}" placeholder="请输入关键词" shape="round" background="inherit"/>
+  <van-search value="{{ value }}" placeholder="请输入关键词" shape="round" background="inherit" disabled="true" bindtap="goto_search"/>
 </view>
 <!-- 搜索框容器 -->
 

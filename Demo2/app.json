@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/search/search",
+    
     "pages/route/route",
     "pages/map/map",
     "pages/like/like",

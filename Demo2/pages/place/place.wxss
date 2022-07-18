@@ -58,6 +58,14 @@ van-search {
   display: flex;
   align-items: center;
 }
+
+.van-cell--hover, .hover-class {
+  width: 90vw !important;
+}
+
+van-cell {
+  width: 90vw !important;
+}
 /* 搜索样式 */
 
 
