@@ -21,6 +21,20 @@ Page({
     islike: 0
   },
 
+  showImg(e) { // 显示大图
+    var url_list = new Array();
+    const head_url = this.data.img_header_url;
+    const N = this.data.img_counts;
+    for(var i=0; i<N; ++i){
+      url_list[i] = head_url+i+".jpg";
+    }
+    var current_url = e.currentTarget.dataset.url;
+    wx.previewImage({
+      current: current_url,
+      urls: url_list
+    })
+  },
+
   onChange_unlike(event){
     // var new_list=app.globalData.like_list;
     // new_list.splice(new_list.indexOf(this.data.place_name), 1);

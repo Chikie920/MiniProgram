@@ -33,7 +33,7 @@
 
 .name-loc-container {
   /* background-color: cadetblue; */
-  height: 5rem;
+  min-height: 5rem;
   margin: 0 auto;
   margin-top: 1.5rem;
 }
@@ -70,4 +70,19 @@
 
 .card-style {
   margin-left: 1rem;
+}
+
+.place-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  /* background-color: gold; */
+}
+
+.place-loc {
+  margin-top: 0.8rem;
+}
+
+.heart {
+  float: right;
 }

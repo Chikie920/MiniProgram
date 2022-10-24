@@ -13,9 +13,8 @@
 <!-- 头图 -->
 
 <view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">
-  <view class="place-name">{{place_name}}</view>
-  <view class="place-loc">{{place_loc}}</view>
-  <view class="heart">{{islike}}{{islike-1}}
+  <view class="place-name">{{place_name}}
+    <view class="heart">
           <van-rate
             wx:if="{{islike}}"
             void-color="#ee0a24"
@@ -24,6 +23,7 @@
             count="1"
             void-icon="like"
             bind:change="onChange_unlike"
+            size="1.5rem"
           />
           <van-rate
             wx:if="{{islike-1}}"
@@ -33,8 +33,11 @@
             count="1"
             void-icon="like"
             bind:change="onChange_like"
+            size="1.5rem"
           />
+    </view>
   </view>
+  <view class="place-loc"><van-icon name="location-o" />{{place_loc}}</view>
 </view>
 <!-- 景点名字、位置与收藏 -->
 
@@ -46,8 +49,13 @@
 <view class="pictures" style="width: {{screenWidth*0.95}}px;">
   <scroll-view class="pictures-scroll" scroll-x>
     <view class="pic-card {{index>0?'card-style':''}}" wx:for="{{img_list}}">
-      <image src="{{img_header_url}}{{item}}.jpg" style="width: inherit; height: inherit;"></image>
+      <image src="{{img_header_url}}{{item}}.jpg" style="width: inherit; height: inherit;" data-url="{{img_header_url}}{{item}}.jpg" bindtap="showImg"></image>
     </view>
   </scroll-view>
 </view>
 <!-- 景点照片 -->
+
+<!-- <van-popup show="{{ display_img }}" bind:close="closeImg">
+  
+</van-popup> -->
+<!-- 大图 -->
