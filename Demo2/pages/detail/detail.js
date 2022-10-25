@@ -13,12 +13,14 @@ Page({
     screenWidth: app.globalData.screenWidth,
     like_list: [],
     place_name: '',
+    place_name_en: '',
     place_loc: '',
     detail: '',
     img_counts: 0,
     img_list: [],
     img_header_url: '',
-    islike: 0
+    islike: 0,
+    lang: 0
   },
 
   showImg(e) { // 显示大图
@@ -53,7 +55,7 @@ Page({
   onChange_like(event){
     console.error('applist',app.globalData.like_list);
     var new_list=app.globalData.like_list;
-    new_list.push(this.data.place_name);
+    new_list.push([this.data.place_name, this.data.place_name_en]);
     app.globalData.like_list = new_list;
     // console.error(new_list);
     db.collection('user_data').where({_openid: this.data.openid}).update({
@@ -74,8 +76,10 @@ Page({
     console.error(app.globalData)
     this.setData({
       place_name: options.place_name,
-      like_list: app.globalData.like_list
-    });
+      like_list: app.globalData.like_list,
+      lang: app.globalData.lang
+    }); 
+    // 参数传入与赋值
 
     db.collection('place_detail').where({
       name: this.data.place_name
@@ -85,7 +89,8 @@ Page({
           detail: res.data[0].detail,
           img_counts: res.data[0].img_counts,
           img_header_url: res.data[0].url_header,
-          place_loc: res.data[0].loc
+          place_loc: res.data[0].loc,
+          place_name_en: res.data[0].name_en
         });
         let i;
         let list=[];
@@ -99,7 +104,8 @@ Page({
     });
 
     // console.error(this.data.like_list.indexOf(this.data.place_name), this.data);
-    if(this.data.like_list.indexOf(this.data.place_name)!=-1){
+    var temp_list = this.data.like_list.flat(); // 转为一维数组便于下面查找下标
+    if(temp_list.indexOf(this.data.place_name)!=-1){
       this.setData({
         islike: 1
       });

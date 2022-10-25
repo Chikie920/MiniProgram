@@ -14,7 +14,8 @@ Page({
     openid: app.globalData.openid,
     text_status: 1,
     like_list: [],
-    change: 0
+    change: 0,
+    lang: 0
   },
 
   onChange(event){
@@ -40,8 +41,10 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      like_list: app.globalData.like_list
+      like_list: app.globalData.like_list,
+      lang: app.globalData.lang
     });
+
     if(this.data.like_list!=[]){
       this.setData({
         text_status: 0

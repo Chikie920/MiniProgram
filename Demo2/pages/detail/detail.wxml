@@ -13,7 +13,7 @@
 <!-- 头图 -->
 
 <view class="name-loc-container" style="width: {{screenWidth*0.95}}px;">
-  <view class="place-name">{{place_name}}
+  <view class="place-name">{{lang==0?place_name:place_name_en}}
     <view class="heart">
           <van-rate
             wx:if="{{islike}}"

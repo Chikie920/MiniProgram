@@ -41,7 +41,7 @@ Page({
       key:"lang",
       data:change
     });
-    this.globalData.lang = change;
+    app.globalData.lang = change;
     this.onLoad();
   },
 
