@@ -44,9 +44,10 @@ Page({
         like:  app.globalData.like_list
       }
     });
-    wx.redirectTo({
-      url: '/pages/detail/detail?place_name='+this.data.place_name,
-    });
+    // wx.redirectTo({
+    //   url: '/pages/detail/detail?place_name='+this.data.place_name,
+    // });
+    this.onLoad();
   },
 
   onChange_like(event){
@@ -54,15 +55,16 @@ Page({
     var new_list=app.globalData.like_list;
     new_list.push(this.data.place_name);
     app.globalData.like_list = new_list;
-    console.error(new_list);
+    // console.error(new_list);
     db.collection('user_data').where({_openid: this.data.openid}).update({
       data: {
         like: app.globalData.like_list
       }
     });
-    wx.redirectTo({
-      url: '/pages/detail/detail?place_name='+this.data.place_name,
-    });
+    // wx.redirectTo({
+    //   url: '/pages/detail/detail?place_name='+this.data.place_name,
+    // });
+    this.onLoad();
   },
 
   /**
@@ -96,12 +98,12 @@ Page({
       }
     });
 
-    console.error(this.data.like_list.indexOf(this.data.place_name), this.data);
+    // console.error(this.data.like_list.indexOf(this.data.place_name), this.data);
     if(this.data.like_list.indexOf(this.data.place_name)!=-1){
       this.setData({
         islike: 1
       });
-      console.error('修改', this.data);
+      // console.error('修改', this.data);
     } //在喜爱列表中
   },
 

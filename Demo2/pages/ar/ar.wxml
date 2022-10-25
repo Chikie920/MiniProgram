@@ -12,11 +12,13 @@
 <van-cell-group inset>
   <van-transition show="{{ true }}" name="slide-right" duration="500">
     <navigator url="/pages/ar_show/ar_show" wx:for="{{ar_list}}">
-      <van-cell title="{{item.name}}" class="list-style"/>
+      <van-cell size="large" border="true" title="{{item.name}}" class="list-style"/>
     </navigator>
   </van-transition>
 </van-cell-group>
 
-<view class="footer-placeholder"></view>
+<view class="footer-placeholder">
+更多全景图像即将到来(◦˙▽˙◦)
+</view>
 
 </view>

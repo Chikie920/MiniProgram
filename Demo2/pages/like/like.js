@@ -18,7 +18,7 @@ Page({
   },
 
   onChange(event){
-    var get_id = event.target.id;
+    var get_id=event.target.id;
     var new_list=this.data.like_list;
     var index = this.data.like_list.indexOf(get_id);
     new_list.splice(index, 1);
@@ -29,9 +29,10 @@ Page({
         like: new_list
       }
     });
-    wx.redirectTo({
-      url: '/pages/like/like',
-    })
+    // wx.redirectTo({
+    //   url: '/pages/like/like',
+    // })
+    this.onLoad();
   },
 
   /**

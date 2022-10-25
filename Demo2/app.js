@@ -7,7 +7,8 @@ App({
     naviHeight: 0,
     openid: '',
     avatar_url: '',
-    like_list: []
+    like_list: [],
+    lang: 0
   },
 
   onLaunch(){

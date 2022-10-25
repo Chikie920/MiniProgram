@@ -37,9 +37,23 @@ Page({
     this.setData({
       lang_change: change
     });
+    wx.setStorage({
+      key:"lang",
+      data:change
+    });
+    this.globalData.lang = change;
+    this.onLoad();
   },
 
   onLoad(options) {
+    wx.getStorage({
+      key: 'lang',
+      success:(res)=> {
+        this.setData({
+          lang_change: res.data
+        });
+      }
+    });
 
     wx.request({
       url: this.data.weather_api_url+'key='+this.data.key+'&location='+this.data.city_code,
