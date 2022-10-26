@@ -3,19 +3,44 @@
 .display {
   width: 100vw;
   height: 100vh;
-  background-color: pink;
+  /* background-color: pink; */
   position: relative;
 }
 
-.aspects {
-  width: 80vw;
-  height: 10vh;
-  background-color: powderblue;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  border-radius: 1.8rem;
-  position: fixed;
-  bottom: 2rem;
+.header-container {
+  height: 3rem;
+  /* background-color: pink; */
+  width: 100vw;
+  /* margin-top: 2.5rem; */
+  bottom: 1rem;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.back-container {
+  width: 3rem;
+  height: inherit;
+  /* background-color: plum; */
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.back-icon {
+  margin: 0 auto;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.huanyuan {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }

@@ -20,7 +20,7 @@ Page({
     city_code: '101200101',
     weather_api_url: 'https://devapi.qweather.com/v7/weather/now?',
     key: 'e26c29f5c2a441f48d633ccc508d66c3',
-    weather: '晴',
+    weather: 'qing',
     weather_list: ['冰雹', '多云', '雷暴', '雷阵雨', '晴', '雾', '小雨', '雪', '扬尘', '阴', '中雨', '大雨', '暴雨'],
     places_card_data: [],
     ar_data: []
@@ -58,19 +58,23 @@ Page({
     wx.request({
       url: this.data.weather_api_url+'key='+this.data.key+'&location='+this.data.city_code,
       success:(res)=> {
-        let text = res.data.now.text;
-        if(this.data.weather_list.indexOf(text)!=-1){
+        // console.error("********")
+        // console.error(res)
+        var text = res.data.now.text;
+        var weather_list_py = ['bingbao', 'duoyun', 'leibao', 'leizhenyu', 'qing', 'wu', 'xiaoyu', 'xue', 'yangcen', 'yin', 'zhongyu', 'dayu', 'baoyu'];
+        var idx = this.data.weather_list.indexOf(text);
+        if(idx!=-1){
           if( /雪/.test(text) ){ // 带雪的天气
             this.setData({
-              weather: '雪'
+              weather: weather_list_py[7]
             });
           } else if( /雷/.test(text) ){ // 带雷的天气
             this.setData({
-              weather: '雷暴'
+              weather: weather_list_py[2]
             });
           } else {
             this.setData({
-              weather: text
+              weather: weather_list_py[idx]
             });
           }
         } else {

@@ -1,4 +1,6 @@
 // pages/ar_show/ar_show.js
+var wxPano = requirePlugin("wxPano");
+
 Page({
 
   /**
@@ -7,12 +9,26 @@ Page({
   data: {
 
   },
+  setCameraLookAt:function(){ // 还原视角
+    wxPano.setCameraLookAt({
+      x: 0.5, y: 0.5
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    
+    wxPano.onReady = function () { //wxPano初始化完成后会触发此事件
+    }
+    wxPano.config({
+    panolist:[{
+      name:"xindamen",
+      src: "https://www.aiotforest.com/pano2048-1024.jpg",
+    }],
+    request:wx.request,
+    loader:"GLLoader",
+    });
   },
 
   /**

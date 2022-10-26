@@ -10,7 +10,7 @@
   <view class="header" style="width: {{screenWidth*0.9}}px;">
     <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
       <view class="weather-container">
-        <image class="weather" src="/sources/weather/{{weather}}.svg"></image>
+        <image class="weather" src="/sources/weather/pinyin/{{weather}}.svg"></image>
         <view class="lang-container" bindtap="change_lang">
           <image class="lang-img" src="/sources/yuyan1.png"></image>
           <text class="lang-text">{{lang[lang_change]}}</text>

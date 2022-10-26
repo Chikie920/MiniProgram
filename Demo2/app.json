@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/ar_show/ar_show",
     "pages/search/search",
     "pages/route/route",
     "pages/map/map",
@@ -12,7 +13,6 @@
     "pages/message/message",
     "pages/feedback/feedback",
     "pages/qa/qa",
-    "pages/ar_show/ar_show",
     "pages/ar/ar",
     "pages/add_plan/add_plan",
     "pages/plan/plan",
@@ -54,6 +54,10 @@
     "routePlan": {
       "version": "1.0.19",
       "provider": "wx50b5593e81dd937a"
+    },
+    "wxPano": {
+      "version": "2.1.4",
+      "provider": "wx386c038238531f87"
     }
   }
 }

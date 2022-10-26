@@ -2,12 +2,13 @@
 
 <view class="display">
 
+<view class="header-container">
+  <navigator class="back-container" delta="1" open-type="navigateBack"><van-icon class="back-icon" name="arrow-left" /></navigator>
+  <view class="huanyuan" bindtap="setCameraLookAt"><image src="/sources/huanyuan.svg" style="width: 1.5rem;height: 1.5rem;"/></view>
+</view>
 
-
-
-
-<!-- <view class="aspects">
-</view> -->
+<pano panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}" key="{{key}}" autoinit="{{false}}">
+</pano>
 
 </view>
 
