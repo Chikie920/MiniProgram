@@ -7,7 +7,7 @@
   <view class="huanyuan" bindtap="setCameraLookAt"><image src="/sources/huanyuan.svg" style="width: 1.5rem;height: 1.5rem;"/></view>
 </view>
 
-<pano panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}" key="{{key}}" autoinit="{{false}}">
+<pano panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}" key="{{}}" autoinit="{{false}}">
 </pano>
 
 </view>

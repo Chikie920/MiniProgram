@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    key: "5615c1445c86934526ce9c02ea2571e7",
   },
   setCameraLookAt:function(){ // 还原视角
     wxPano.setCameraLookAt({
@@ -23,8 +23,8 @@ Page({
     }
     wxPano.config({
     panolist:[{
-      name:"xindamen",
-      src: "https://www.aiotforest.com/pano2048-1024.jpg",
+      name:"tupian",
+      src: "https://i.ibb.co/nfgXFT1/2.jpg",
     }],
     request:wx.request,
     loader:"GLLoader",
