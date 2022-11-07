@@ -22,12 +22,17 @@ App({
     const db = wx.cloud.database();
     wx.login({
       success (res) {
+        console.error('login code'+res.code);
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'https://airtourplan.com/get_openid.php',
+            url: 'https://airtourplan.com/api/get_openid',
             data: {
-              code: res.code
+              code: res.code,
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
             },
             success (res) {
               console.error(res);

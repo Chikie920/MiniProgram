@@ -4,7 +4,7 @@ getOpenid();
 function getOpenid() {
     $code = $_GET['code'];//小程序传来的code值
     $appid = 'wxe2e77a6b1b9f1b16';//小程序的appid
-    $appSecret = 'f69b786500165567e0e5059c07342973';// 小程序的$appSecret
+    $appSecret = '061y8dGa1JCvdE0GjVIa1fi6iB2y8dG3';// 小程序的$appSecret
     $wxUrl = 'https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code';
     $getUrl = sprintf($wxUrl, $appid, $appSecret, $code);//把appid，appsecret，code拼接到url里
     $result = curl_get($getUrl);//请求拼接好的url
