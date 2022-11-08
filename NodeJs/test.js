@@ -1,1 +1,1 @@
-console.log(JSON.parse('code=061KNXFa1rZcdE0SgmJa1vd8ss0KNXFy&zs=123'))
+console.log(JSON.parse("{name:'zs', age: 18}"))
