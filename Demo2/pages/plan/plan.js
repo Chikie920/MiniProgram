@@ -1,6 +1,5 @@
 // pages/plan/plan.js
 const app = getApp();
-const db = wx.cloud.database()
 
 Page({
 
@@ -33,14 +32,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-      var that = this;
-      db.collection('user_data').where({_openid: app.globalData.openid}).get({
-        success(res) {
-          that.setData({
+      wx.request({
+        url: 'https://airtourplan.com/api/db/get_data',
+        data: {
+          collection_name: 'user_data',
+          _openid: app.globalData.openid
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success:(res)=>{
+          this.setData({
             plan_list: res.data[0].plan_list
           });
         }
       });
+      // 获取计划列表
+
+      // db.collection('user_data').where({_openid: app.globalData.openid}).get({
+      //   success:(res)=> {
+      //     this.setData({
+      //       plan_list: res.data[0].plan_list
+      //     });
+      //   }
+      // });
     // console.error(app.globalData.plan_list, this.data.plan_list.activity)
   },
 

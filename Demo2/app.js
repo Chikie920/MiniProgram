@@ -37,17 +37,16 @@ App({
               that.globalData.openid = res.data.openid; // 成功获取openid
               // console.error(that.globalData.openid);
               wx.request({
-                url: 'https://airtourplan.com/api/db/get_userdata',
+                url: 'https://airtourplan.com/api/db/get_data',
                 data: {
-                  openid: that.globalData.openid
+                  collection_name: 'user_data', 
+                  _openid: that.globalData.openid
                 },
                 method: 'POST',
                 header: {
                   'content-type': 'application/x-www-form-urlencoded'
                 },
                 success(res){
-                  console.error('*******');
-                  console.error(res);
                   if(res.data.length == 0){
                     wx.redirectTo({
                       url: '/pages/login/login'

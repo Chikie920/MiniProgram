@@ -11,6 +11,10 @@ const app = express();
 // app.use(express.static('./public')); // 托管公共访问目录
 app.use(express.urlencoded({ extended: false })); // 解析json中间件
 app.use(router); // 注册路由
+// app.post('/api', (req, res)=>{
+//     console.log(Object.keys(req.body));
+//     console.log(Object.values(req.body));
+// });
 // app.use(cors()); // 跨域中间件
 
 // const options = {

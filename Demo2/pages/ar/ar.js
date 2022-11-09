@@ -1,6 +1,5 @@
 // pages/ar/ar.js
 const app = getApp();
-const db = wx.cloud.database();
 
 Page({
 
@@ -18,13 +17,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    db.collection('ar_list').where({}).get({
+
+    wx.request({
+      url: 'https://airtourplan.com/api/db/get_data',
+      data: {
+        collection_name: 'ar_list'
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
       success:(res)=>{
         this.setData({
           ar_list: res.data
         });
       }
     });
+    // 获取ar列表
+    // db.collection('ar_list').where({}).get({
+    //   success:(res)=>{
+    //     this.setData({
+    //       ar_list: res.data
+    //     });
+    //   }
+    // });
 
   },
 

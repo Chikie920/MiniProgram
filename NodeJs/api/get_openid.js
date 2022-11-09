@@ -29,6 +29,6 @@ exports.get_user_id = (req, res)=>{
     //     res.send(data);
     // });
     console.log(req.body);
-    res.send(req.body);
+    res.end(req.body);
     
 };

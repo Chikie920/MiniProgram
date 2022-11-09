@@ -1,6 +1,5 @@
 // index.js
 const app = getApp();
-const db = wx.cloud.database();
 
 let key = 'JOSBZ-R3KW3-YMN3J-33XBY-E67QH-CCBJD';  //使用在腾讯位置服务申请的key
 let referer = 'Demo2';   //调用插件的app的名称
@@ -84,21 +83,36 @@ Page({
 
     });
     // 获取天气情况
-
-    db.collection('main_place_info').where({}).get({
+    wx.request({
+      url: 'https://airtourplan.com/api/db/get_data',
+      data: {
+        collection_name: 'main_place_info'
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
       success:(res)=>{
         this.setData({
           places_card_data : res.data
-        })
+        });
       }
     });
     // 获取主页热门景点
 
-    db.collection('main_ar_info').where({}).get({
+    wx.request({
+      url: 'https://airtourplan.com/api/db/get_data',
+      data: {
+        collection_name: 'main_ar_info'
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
       success:(res)=>{
         this.setData({
           ar_data : res.data
-        })
+        });
       }
     });
     // 获取主页热门全景

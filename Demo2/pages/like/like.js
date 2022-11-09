@@ -29,7 +29,7 @@ Page({
       data:{
         like: new_list
       }
-    });
+    }); // 更新数据库
     // wx.redirectTo({
     //   url: '/pages/like/like',
     // })

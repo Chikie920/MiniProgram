@@ -58,6 +58,7 @@ Page({
     new_list.push([this.data.place_name, this.data.place_name_en]);
     app.globalData.like_list = new_list;
     // console.error(new_list);
+  
     db.collection('user_data').where({_openid: this.data.openid}).update({
       data: {
         like: app.globalData.like_list
@@ -81,9 +82,16 @@ Page({
     }); 
     // 参数传入与赋值
 
-    db.collection('place_detail').where({
-      name: this.data.place_name
-    }).get({
+    wx.request({
+      url: 'https://airtourplan.com/api/db/get_data',
+      data: {
+        collection_name: 'place_detail',
+        name: this.data.place_name
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
       success:(res)=>{
         this.setData({
           detail: res.data[0].detail,
@@ -102,6 +110,29 @@ Page({
         });
       }
     });
+    // 获取景点详情信息
+
+    // db.collection('place_detail').where({
+    //   name: this.data.place_name
+    // }).get({
+    //   success:(res)=>{
+    //     this.setData({
+    //       detail: res.data[0].detail,
+    //       img_counts: res.data[0].img_counts,
+    //       img_header_url: res.data[0].url_header,
+    //       place_loc: res.data[0].loc,
+    //       place_name_en: res.data[0].name_en
+    //     });
+    //     let i;
+    //     let list=[];
+    //     for(i=0; i<this.data.img_counts; ++i){
+    //       list.push(i);
+    //     };
+    //     this.setData({
+    //       img_list: list
+    //     });
+    //   }
+    // });
 
     // console.error(this.data.like_list.indexOf(this.data.place_name), this.data);
     var temp_list = this.data.like_list.flat(); // 转为一维数组便于下面查找下标
