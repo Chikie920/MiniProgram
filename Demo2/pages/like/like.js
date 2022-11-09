@@ -1,6 +1,5 @@
 // pages/like/like.js
 const app = getApp();
-const db = wx.cloud.database();
 
 Page({
 
@@ -23,6 +22,21 @@ Page({
     var new_list=this.data.like_list;
     var index = this.data.like_list.indexOf(get_id);
     new_list.splice(index, 1);
+
+    wx.request({
+      url: 'http://localhost:80/api/db/update_data',
+      data: {
+        collection_name: 'test',
+        march: {age: 18},
+        update_data: {sex: 'female'}
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    });
+    // 获取主页热门景点
+
     db.collection('user_data').where({
       _openid: this.data.openid
     }).update({
@@ -40,6 +54,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+
+    wx.request({
+      url: 'http://localhost:80/api/db/update_data',
+      data: {
+        collection_name: 'test',
+        march: {age: 18},
+        update_data: {sex: 'female'}
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    });
+    // 获取主页热门景点
+
     this.setData({
       like_list: app.globalData.like_list,
       lang: app.globalData.lang
