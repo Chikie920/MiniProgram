@@ -24,7 +24,7 @@ Page({
     wxPano.config({
     panolist:[{
       name:"tupian",
-      src: "https://i.ibb.co/nfgXFT1/2.jpg",
+      src: "https://www.airtourplan.com/sources/ar_imgs/1.jpg",
     }],
     request:wx.request,
     loader:"GLLoader",

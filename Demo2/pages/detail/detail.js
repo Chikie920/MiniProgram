@@ -1,6 +1,5 @@
 // pages/detail/detail.js
 var app = getApp();
-const db = wx.cloud.database();
 
 Page({
 
@@ -41,13 +40,25 @@ Page({
     // var new_list=app.globalData.like_list;
     // new_list.splice(new_list.indexOf(this.data.place_name), 1);
     app.globalData.like_list.splice(app.globalData.like_list.indexOf(this.data.place_name), 1);
-    db.collection('user_data').where({_openid: this.data.openid}).update({
+
+    wx.request({
+      url: 'http://localhost:80/api/db/update_data',
       data: {
-        like:  app.globalData.like_list
+        collection_name: 'user_data',
+        march: JSON.stringify({_openid: this.data.openid}),
+        update_data: JSON.stringify({like: app.globalData.like_list})
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
       }
     });
-    // wx.redirectTo({
-    //   url: '/pages/detail/detail?place_name='+this.data.place_name,
+    // 更新用户喜爱列表
+
+    // db.collection('user_data').where({_openid: this.data.openid}).update({
+    //   data: {
+    //     like:  app.globalData.like_list
+    //   }
     // });
     this.onLoad();
   },
@@ -59,13 +70,23 @@ Page({
     app.globalData.like_list = new_list;
     // console.error(new_list);
   
-    db.collection('user_data').where({_openid: this.data.openid}).update({
+    wx.request({
+      url: 'http://localhost:80/api/db/update_data',
       data: {
-        like: app.globalData.like_list
+        collection_name: 'user_data',
+        march: JSON.stringify({_openid: this.data.openid}),
+        update_data: JSON.stringify({like: app.globalData.like_list})
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
       }
     });
-    // wx.redirectTo({
-    //   url: '/pages/detail/detail?place_name='+this.data.place_name,
+
+    // db.collection('user_data').where({_openid: this.data.openid}).update({
+    //   data: {
+    //     like: app.globalData.like_list
+    //   }
     // });
     this.onLoad();
   },
