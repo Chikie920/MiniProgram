@@ -11,7 +11,7 @@
 
 <van-cell-group inset>
   <van-transition show="{{ true }}" name="slide-right" duration="500">
-    <navigator url="/pages/ar_show/ar_show" wx:for="{{ar_list}}">
+    <navigator url="/pages/ar_show/ar_show?img_url={{item.url}}" wx:for="{{ar_list}}">
       <van-cell size="large" border="true" title="{{item.name}}" class="list-style"/>
     </navigator>
   </van-transition>

@@ -19,12 +19,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.error(options);
     wxPano.onReady = function () { //wxPano初始化完成后会触发此事件
     }
     wxPano.config({
     panolist:[{
       name:"tupian",
-      src: "https://www.airtourplan.com/sources/ar_imgs/1.jpg",
+      src: "https://www.airtourplan.com/sources/ar_imgs/"+options.img_url,
     }],
     request:wx.request,
     loader:"GLLoader",

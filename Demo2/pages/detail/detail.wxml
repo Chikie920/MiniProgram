@@ -42,7 +42,7 @@
 <!-- 景点名字、位置与收藏 -->
 
 <view class="desc" style="width: {{screenWidth*0.95}}px;">
-  {{detail}}
+  {{lang==0?detail:detail_en}}
 </view>
 <!-- 介绍与资讯 -->
 

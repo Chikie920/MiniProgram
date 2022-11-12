@@ -10,11 +10,11 @@
   <view class="header" style="width: {{screenWidth*0.9}}px;">
     <view class="weather-and-lang" style="width: {{screenWidth*0.9}}px; height: {{screenHeight*0.25*0.4}}px;">
       <view class="weather-container">
-        <image class="weather" src="/sources/weather/pinyin/{{weather}}.svg"></image>
+        <image class="weather" src="https://www.airtourplan.com/sources/weather/{{weather}}.svg"></image>
         <view class="lang-container" bindtap="change_lang">
-          <image class="lang-img" src="/sources/yuyan1.png"></image>
+          <image class="lang-img" src="https://www.airtourplan.com/sources/others/yuyan1.png"></image>
           <text class="lang-text">{{lang[lang_change]}}</text>
-          <image class="lang-img-right" src="/sources/qiehuan.png"></image>
+          <image class="lang-img-right" src="https://www.airtourplan.com/sources/others/qiehuan.png"></image>
         </view>
       </view>
     </view>
@@ -31,7 +31,7 @@
       
         <navigator class="label" url="/pages/place/place">
           <view class="label-img-continer">
-            <image class="label-img" src="/sources/jingdian3.png"></image>
+            <image class="label-img" src="https://www.airtourplan.com/sources/others/jingdian3.png"></image>
           </view>
           <text class="label-text">{{lang_change==0?"景点":"Places"}}</text>
         </navigator>
@@ -39,7 +39,7 @@
 
       <view class="label label-style" bindtap="route">
         <view class="label-img-continer">
-          <image class="label-img" src="/sources/luxian.png"></image>
+          <image class="label-img" src="https://www.airtourplan.com/sources/others/luxian.png"></image>
         </view>
         <text class="label-text">{{lang_change==0?"路线":"Route"}}</text>
       </view>
@@ -47,14 +47,14 @@
 
       <navigator class="label label-style" url="/pages/ar/ar">
         <view class="label-img-continer">
-          <image class="label-img" src="/sources/quanjing2.png"></image>
+          <image class="label-img" src="https://www.airtourplan.com/sources/others/quanjing2.png"></image>
         </view>
         <text class="label-text">{{lang_change==0?"全景":"Ar"}}</text>
       </navigator>
 
       <navigator class="label label-style" url="/pages/map/map">
         <view class="label-img-continer">
-          <image class="label-img" src="/sources/ditu2.png"></image>
+          <image class="label-img" src="https://www.airtourplan.com/sources/others/ditu2.png"></image>
         </view>
         <text class="label-text">{{lang_change==0?"地图":"Map"}}</text>
       </navigator>

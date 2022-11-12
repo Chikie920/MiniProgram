@@ -15,6 +15,7 @@ Page({
     place_name_en: '',
     place_loc: '',
     detail: '',
+    detail_en: '',
     img_counts: 0,
     img_list: [],
     img_header_url: '',
@@ -119,7 +120,8 @@ Page({
           img_counts: res.data[0].img_counts,
           img_header_url: res.data[0].url_header,
           place_loc: res.data[0].loc,
-          place_name_en: res.data[0].name_en
+          place_name_en: res.data[0].name_en,
+          detail_en: res.data[0].detail_en
         });
         let i;
         let list=[];
