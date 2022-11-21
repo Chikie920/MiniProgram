@@ -20,8 +20,8 @@
     </view>
 
     <view class="header-text" style="width: {{screenWidth*0.9}}px;">
-      <view><text class="text-greet">Hey there! 你好！ 👋🍃</text></view>
-      <view><text class="text-tips">今天会下雨，记得带伞哦!</text></view>
+      <view><text class="text-greet">{{lang_change==0? "Hey there! 你好！ 👋🍃": "你好, 武汉 👋🍃"}}</text></view>
+      <!-- <view><text class="text-tips">今天会下雨，记得带伞哦!</text></view> -->
     </view>
   </view>
   <!-- 顶部显示 -->
@@ -63,7 +63,7 @@
   </view>
   <!-- 功能选项 -->
 
-  <view class="popular-text" style="width: {{screenWidth*0.9}}px;">热门景点</view>
+  <view class="popular-text" style="width: {{screenWidth*0.9}}px;">{{lang_change==0?"热门景点": "Popular Places"}}</view>
   <view class="hot-places" style="width: {{screenWidth*0.9}}px; height: 14rem;">
     <scroll-view class="places-container" scroll-x>
 
@@ -84,12 +84,12 @@
   <!-- 热门景点 -->
 
   <view class="explore" style="width: {{screenWidth*0.9}}px;">
-    <view class="explore-title" style="width: {{screenWidth*0.9}}px;">热门全景</view>
+    <view class="explore-title" style="width: {{screenWidth*0.9}}px;">{{lang_change==0?"热门全景":"Popular AR"}}</view>
     <scroll-view class="explore-scroll" scroll-x>
 
     <navigator class="explore-container {{index>0?'explore-container-style':''}}" wx:for="{{ar_data}}" url="/pages/ar_show/ar_show">
       <view class="explore-img-container"><image class="explore-img" src="{{item.img_url}}"></image></view>
-      <view class="explore-text">{{item.place_name}}</view>
+      <view class="explore-text">{{lang_change==0?item.place_name:item.place_name_en}}</view>
     </navigator>
 
     </scroll-view>
