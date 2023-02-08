@@ -9,7 +9,7 @@ async function get_data(req, res){
     keys.forEach((field, index) => {
         options[field] = values[index];
      });
-    console.log(options);
+    // console.log(options);
     const user_data = await get_db_data(db, collection_name, options);
     res.send(user_data);
 }

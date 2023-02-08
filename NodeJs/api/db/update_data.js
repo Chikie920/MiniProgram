@@ -9,6 +9,7 @@ async function update_data(req, res){
     // console.dir(JSON.parse(march), {depth:null});
     // console.dir(JSON.parse(update_data), {depth:null});
     await Client.update(db, collection_name, march, update_data);
+    res.end();
 }
 
 module.exports = {

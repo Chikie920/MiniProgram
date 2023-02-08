@@ -12,10 +12,10 @@
     <view class="text-tips" wx:if="{{text_status}}">这里空空如也，快去添加喜爱的景点吧!</view>
 
     <view class="place-card" wx:for="{{like_list}}">
-      <navigator class="place-info" url="/pages/detail/detail?place_name={{item[0]}}">
+      <view class="place-info">
         <view class="heart">
           <van-rate
-            id="{{item}}"
+            id="{{item[0]}}"
             void-color="#ee0a24"
             color="#ee0a24"
             icon="like"
@@ -24,8 +24,8 @@
             bind:change="onChange"
           />
         </view>
-        <view class="place-name">{{item[lang]}}</view>
-      </navigator>
+        <navigator url="/pages/detail/detail?place_name={{item[0]}}" class="place-name">{{item[lang]}}</navigator>
+      </view>
     </view>
     
 

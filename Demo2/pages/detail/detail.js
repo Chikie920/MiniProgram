@@ -38,15 +38,25 @@ Page({
   },
 
   onChange_unlike(event){
-    // var new_list=app.globalData.like_list;
+    var new_list=app.globalData.like_list;
+    var index;
+    new_list.forEach((item, idx)=>{
+      item.forEach((element)=>{
+        if(element==this.data.place_name) {
+          index = idx;
+        }
+      });
+    });
     // new_list.splice(new_list.indexOf(this.data.place_name), 1);
-    app.globalData.like_list.splice(app.globalData.like_list.indexOf(this.data.place_name), 1);
+    new_list.splice(index, 1);
+    app.globalData.like_list = new_list;
+    // app.globalData.like_list.splice(app.globalData.like_list.indexOf(this.data.place_name), 1);
 
     wx.request({
-      url: 'http://localhost:80/api/db/update_data',
+      url: 'https://airtourplan.com/api/db/update_data',
       data: {
         collection_name: 'user_data',
-        march: JSON.stringify({_openid: this.data.openid}),
+        march: JSON.stringify({_openid: app.globalData.openid}),
         update_data: JSON.stringify({like: app.globalData.like_list})
       },
       method: 'POST',
@@ -65,17 +75,17 @@ Page({
   },
 
   onChange_like(event){
-    console.error('applist',app.globalData.like_list);
+    // console.error('applist',app.globalData.like_list);
     var new_list=app.globalData.like_list;
     new_list.push([this.data.place_name, this.data.place_name_en]);
     app.globalData.like_list = new_list;
     // console.error(new_list);
   
     wx.request({
-      url: 'http://localhost:80/api/db/update_data',
+      url: 'https://airtourplan.com/api/db/update_data',
       data: {
         collection_name: 'user_data',
-        march: JSON.stringify({_openid: this.data.openid}),
+        march: JSON.stringify({_openid: app.globalData.openid}),
         update_data: JSON.stringify({like: app.globalData.like_list})
       },
       method: 'POST',
@@ -96,11 +106,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.error(app.globalData)
+    wx.getStorage({
+      key: 'lang',
+      success:(res)=> {
+        this.setData({
+          lang: res.data
+        });
+      }
+    });
+
     this.setData({
       place_name: options.place_name,
       like_list: app.globalData.like_list,
-      lang: app.globalData.lang
     }); 
     // 参数传入与赋值
 

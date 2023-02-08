@@ -6,23 +6,25 @@ const client = new MongoClient(url); // 创建连接
 function init (){ // 初始化数据库连接
     client.connect(); // 连接数据库
     const db = client.db('airtourplan'); // 获取数据库对象
-    console.log('Mongodb connected successfully to server');
+    console.log('Mongodb connected successfully to server'+ new Date());
     return db; // 返回数据库
 }
 
 async function select(db, collection_name, options){ // select操作
     // console.log(options);
     const ans = await db.collection(collection_name).find(options).toArray();
-    destory();
     return ans;
 }
 
-async function update(db, collection_name, march, update_data){
+async function update(db, collection_name, march, update_data){ // update操作
     const update_doc = {
         $set: update_data
     };
     await db.collection(collection_name).updateOne(march, update_doc);
-    destory();
+}
+
+async function insert(db, collection_name, data) { // insert操作
+    await db.collection(collection_name).insertOne(data);
 }
 
 function destory(){
@@ -32,5 +34,6 @@ function destory(){
 module.exports = {
     init,
     select,
-    update
+    update,
+    insert
 }

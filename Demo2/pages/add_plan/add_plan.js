@@ -2,7 +2,6 @@
 import Dialog from '@vant/weapp/dialog/dialog';
 
 const app = getApp();
-const db = wx.cloud.database()
 var activities = [];
 
 Page({
@@ -108,16 +107,30 @@ Page({
       var addplan = this.data.old_plan;
       // console.error('addplan',addplan)
       addplan.push(this.data.plan);
-      db.collection('user_data').where({
-        _openid: app.globalData.openid
-      }).update({
+      wx.request({
+        url: 'https://airtourplan.com/api/db/update_data',
         data: {
-          plan_list: addplan
+          collection_name: 'user_data',
+          march: JSON.stringify({_openid: app.globalData.openid}),
+          update_data: JSON.stringify({plan_list: addplan})
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success (res) {
+          wx.navigateBack({
+            delta: 1
+          });
         }
       });
-      wx.navigateBack({
-        delta: 1
-      });
+      // db.collection('user_data').where({
+      //   _openid: app.globalData.openid
+      // }).update({
+      //   data: {
+      //     plan_list: addplan
+      //   }
+      // });
     } else {
       Dialog.alert({
         message: '请检查计划名、日期且至少添加一个活动',

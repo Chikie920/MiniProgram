@@ -1,7 +1,6 @@
 // pages/login/login.js
 import Dialog from '@vant/weapp/dialog/dialog';
 var app = getApp();
-const db = wx.cloud.database();
 
 Page({
 
@@ -22,18 +21,45 @@ Page({
           user_name: res.userInfo.nickName,
           user_headerimg: res.userInfo.avatarUrl
         });
-        db.collection('user_data').add({
-          data:{
-            name: that.data.user_name,
-            avatar_url: that.data.user_headerimg
+
+        // 坑 小程序传递json 务必使用JSON.stringify将Json对象转换为json字符串
+        wx.request({
+          url: 'https://airtourplan.com/api/db/insert_data',
+          // url: 'https://www.airtourplan.com/api/db/insert_data', 挂壁了
+          data: {
+            collection_name: 'user_data',
+            data: JSON.stringify(
+              {
+                _openid:app.globalData.openid,
+                avatar_url:that.data.user_headerimg,
+                name:that.data.user_name
+            }
+            )
           },
-          success(res) {
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success:(res)=>{
             app.globalData.avatar_url = that.data.user_headerimg; // 保存头像url
             wx.redirectTo({
               url: '/pages/index/index'
             });
           }
         });
+
+        // db.collection('user_data').add({
+        //   data:{
+        //     name: that.data.user_name,
+        //     avatar_url: that.data.user_headerimg
+        //   },
+        //   success(res) {
+        //     app.globalData.avatar_url = that.data.user_headerimg; // 保存头像url
+        //     wx.redirectTo({
+        //       url: '/pages/index/index'
+        //     });
+        //   }
+        // });
         // console.log(that.data)
       },
       fail(res) {

@@ -10,7 +10,8 @@ Page({
     naviHeight: app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
     screenHeight: app.globalData.screenHeight,
-    place_list: []
+    place_list: [],
+    lang_change: 0
   },
 
   goto_search() {
@@ -25,6 +26,15 @@ Page({
    */
   onLoad(options) {
 
+    wx.getStorage({
+      key: 'lang',
+      success:(res)=> {
+        this.setData({
+          lang_change: res.data
+        });
+      }
+    });
+
     wx.request({
       url: 'https://airtourplan.com/api/db/get_data',
       data: {
@@ -38,6 +48,8 @@ Page({
         this.setData({
           place_list: res.data
         });
+        console.error("******");
+        console.error(this.data.place_list);
       }
     });
     // 获取主页景点列表

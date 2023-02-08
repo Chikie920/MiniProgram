@@ -24,8 +24,8 @@
           <image src="{{item.url_header}}0.jpg"></image>
         </view>
         <view class="card-info" style="width: {{screenWidth*0.9*0.45}}px; height: {{screenHeight*0.2*0.9}}px;">
-          <view class="place-name">{{item.name}}</view>
-          <view class="other-info">{{item.info}}</view>
+          <view class="place-name">{{lang_change==0?item.name:item.name_en}}</view>
+          <view class="other-info">{{lang_change==0?item.info:item.info_en}}</view>
         </view>
       </view>
       <van-divider class="card-gap" customStyle="color: black;"></van-divider>

@@ -87,7 +87,7 @@
     <view class="explore-title" style="width: {{screenWidth*0.9}}px;">{{lang_change==0?"热门全景":"Popular AR"}}</view>
     <scroll-view class="explore-scroll" scroll-x>
 
-    <navigator class="explore-container {{index>0?'explore-container-style':''}}" wx:for="{{ar_data}}" url="/pages/ar_show/ar_show">
+    <navigator class="explore-container {{index>0?'explore-container-style':''}}" wx:for="{{ar_data}}" url="/pages/ar_show/ar_show?img_url={{item.ar_img}}">
       <view class="explore-img-container"><image class="explore-img" src="{{item.img_url}}"></image></view>
       <view class="explore-text">{{lang_change==0?item.place_name:item.place_name_en}}</view>
     </navigator>

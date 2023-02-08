@@ -11,30 +11,51 @@ Page({
     screenHeight: app.globalData.screenHeight-app.globalData.naviHeight,
     screenWidth: app.globalData.screenWidth,
     openid: app.globalData.openid,
-    text_status: 1,
+    text_status: 0,
     like_list: [],
     change: 0,
     lang: 0
   },
 
   onChange(event){
-    var get_id=event.target.id;
-    var new_list=this.data.like_list;
-    var index = this.data.like_list.indexOf(get_id);
+    var that = this;
+    var get_id = event.target.id;
+    // console.error("***** "+get_id);
+    var new_list = this.data.like_list;
+    var index;
+    new_list.forEach((item, idx)=>{
+      item.forEach((element)=>{
+        if(element==get_id) {
+          index = idx;
+        }
+      });
+    });
+    // console.error(new_list[1]);
+    // var index = this.data.like_list.indexOf(get_id);
+    // console.error(index);
     new_list.splice(index, 1);
-
+    // console.error(new_list);
+    app.globalData.like_list = new_list;
     wx.request({
-      url: 'http://localhost:80/api/db/update_data',
+      url: 'https://www.airtourplan.com/api/db/update_data',
       data: {
         collection_name: 'user_data',
-        march: JSON.stringify({_openid: this.data.openid}),
-        update_data: JSON.stringify({like: new_list})
+        march: JSON.stringify({_openid: app.globalData.openid}),
+        update_data: JSON.stringify({like: app.globalData.like_list})
       },
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res){
+        // console.error(app.globalData.like_list);
+        // that.onLoad();
+      },
+      fail(res){
+        console.error("****更新失败!****");
       }
     });
+    this.onLoad();
     // 获取主页热门景点
 
     // db.collection('user_data').where({
@@ -47,21 +68,30 @@ Page({
     // wx.redirectTo({
     //   url: '/pages/like/like',
     // })
-    this.onLoad();
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
-      like_list: app.globalData.like_list,
-      lang: app.globalData.lang
+
+    wx.getStorage({
+      key: 'lang',
+      success:(res)=> {
+        this.setData({
+          lang: res.data
+        });
+      }
     });
 
-    if(this.data.like_list!=[]){
+    this.setData({
+      like_list: app.globalData.like_list,
+    });
+    // console.error(this.data.like_list);
+
+    if(this.data.like_list.length==0){
       this.setData({
-        text_status: 0
+        text_status: 1
       });
     }
   },

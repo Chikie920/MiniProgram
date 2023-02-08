@@ -98,6 +98,11 @@ van-cell {
   overflow: hidden;
 }
 
+.other-info {
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
 .card-info {
   /* background-color: lightblue; */
   width: inherit;
