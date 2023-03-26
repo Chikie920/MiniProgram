@@ -4,8 +4,8 @@ const https = require('https');
 const app = express();
 app.use(express.urlencoded({ extended: false })); // 解析json中间件
 
-const appid = 'wxe2e77a6b1b9f1b16';//小程序的appid
-const appSecret = 'f69b786500165567e0e5059c07342973';// 小程序的$appSecret
+const appid = '';//小程序的appid
+const appSecret = '';// 小程序的$appSecret
 var jscode = '';
 
 exports.get_user_id = (req, res)=>{
